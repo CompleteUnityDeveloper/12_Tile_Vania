@@ -28,3 +28,13 @@ Here are the lectures of the course for this section...
 Explain to a fellow student roughly what we're building, and why this is awesome stuff to know.
 
 
+### 2 TileVania Game Design ###
+
+**In this video (objectives)…**
+
+1. Be clear on the core game design for this section.
+2. Understand the creative options that each student has for making this game their own.
+
+**After watching (learning outcomes)…**
+
+Explain to a fellow student the design of what we'll be building and to start exploring options for creativity.
