@@ -27,11 +27,8 @@ public class SmartBrush : GridBrush
     // Note manual has wrong parameter name grid instead of gridLayout!
     public override void Paint(GridLayout gridLayout, GameObject brushTarget, Vector3Int position)
     {
-        Debug.Log("Paint() called at " + position);
         var randomTile = randomTiles[(int)(randomTiles.Length * Random.value)];
         var tilemap = brushTarget.GetComponent<Tilemap>();
         tilemap.SetTile(position, randomTile);
     }
-
-
 }
