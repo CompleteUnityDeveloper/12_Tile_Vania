@@ -38,3 +38,17 @@ Explain to a fellow student roughly what we're building, and why this is awesome
 **After watching (learning outcomes)…**
 
 Explain to a fellow student the design of what we'll be building and to start exploring options for creativity.
+
+
+### 3 Intro to Unity Tilemap ###
+
+**In this video (objectives)…**
+
+1. Set up multiple tilemaps as foreground and background layers.
+2. Build multiple tile palettes.
+3. Slice sprite sheets to create individual sprite assets.
+4. Paint a simple level.
+
+**After watching (learning outcomes)…**
+
+Able to import a sprite sheet, slice it up, create tile palettes and paint a simple level layout.
