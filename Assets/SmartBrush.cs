@@ -6,7 +6,9 @@ using UnityEditor; // so we can inherit from GridBrush
 
 // required for brush to show at bottom-left of TilePalette
 // parameters restrict to just the SO brush
+
 [CustomGridBrush(false, true, false, "Smart Brush")]
+
 public class SmartBrush : GridBrush
 {
     [SerializeField] TileBase[] randomTiles; // on Scriptable Object
