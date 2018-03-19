@@ -50,3 +50,16 @@ Explain to a fellow student the design of what we'll be building and to start ex
 **After watching (learning outcomes)…**
 
 Be capable of slicing sprite sheets to make individual assets.
+
+
+### 4 Intro To Unity Tilemap ###
+
+**In this video (objectives)…**
+
+1. Create multiple tile map layers.
+2. Build multiple tile palettes.
+3. Paint a simple level.
+
+**After watching (learning outcomes)…**
+
+Able to import a sprite sheet, slice it up, create tile palettes and paint a simple level layout.
