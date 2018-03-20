@@ -76,3 +76,17 @@ Able to import a sprite sheet, slice it up, create tile palettes and paint a sim
 **After watching (learning outcomes)…**
 
 Created 4 frames of 2d character idle animation which plays automatically when the game plays.
+
+
+### 6 Animation States & Triggers ###
+
+**In this video (objectives)…**
+
+1. Create animation clips for roll, jump, run, shoot and climb.
+2. Add animation states for each animation clip type.
+3. Add triggers to switch between animation states.
+4. Add transitions between animation states.
+
+**After watching (learning outcomes)…**
+
+Able to construct an animation state machine with transitions and triggers.
