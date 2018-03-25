@@ -90,3 +90,5 @@ Created 4 frames of 2d character idle animation which plays automatically when t
 **After watching (learning outcomes)…**
 
 Able to construct an animation state machine with transitions and triggers.
+
+Git Test
