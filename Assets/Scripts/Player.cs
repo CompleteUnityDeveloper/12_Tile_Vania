@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
 
     Rigidbody2D playerRigidBody;
-    public float fudgeFactor = 0.1f;
 
     // Use this for initialization
     void Start()
@@ -28,14 +27,15 @@ public class Player : MonoBehaviour
 
     private void FaceCorrectDirection()
     {
-        print(playerRigidBody.velocity.x);   
-        if (playerRigidBody.velocity.x > fudgeFactor)
+        bool playerIsNotMoving = Mathf.Abs(playerRigidBody.velocity.x) < Mathf.Epsilon;
+        if (playerIsNotMoving)
         {
-            transform.localScale = new Vector2(1f, 1f);
+            // don't change player direction
         }
-        else if (playerRigidBody.velocity.x < -fudgeFactor) // note -
+        else
         {
-            transform.localScale = new Vector2(-1f, 1f);
+            // reverse x scale to flip player horizontally
+            transform.localScale = new Vector2(Mathf.Sign(playerRigidBody.velocity.x), 1f);  
         }
     }
 
