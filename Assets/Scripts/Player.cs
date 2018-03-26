@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
-
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
 
     Rigidbody2D playerRigidBody;
+    public float fudgeFactor = 0.1f;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,20 @@ public class Player : MonoBehaviour
     {
         ProcessHorizontal();
         ProcessJumps();
+        FaceCorrectDirection();
+    }
+
+    private void FaceCorrectDirection()
+    {
+        print(playerRigidBody.velocity.x);   
+        if (playerRigidBody.velocity.x > fudgeFactor)
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        else if (playerRigidBody.velocity.x < -fudgeFactor) // note -
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
     }
 
     private void ProcessHorizontal()
