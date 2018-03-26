@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    //[HideInInspector] // note new attribute
+    [HideInInspector] // note new attribute
     public bool isOnLadder = false; 
     
     [SerializeField] float runSpeed = 5f;
@@ -27,22 +27,6 @@ public class Player : MonoBehaviour
         ProcessJumps();
         FaceCorrectDirection();
         ClimbWhenOnLadder();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
-        {
-            isOnLadder = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
-        {
-            isOnLadder = false;
-        }
     }
 
     private void ClimbWhenOnLadder()
