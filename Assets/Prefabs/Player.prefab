@@ -22,9 +22,8 @@ GameObject:
   - component: {fileID: 212816716817732168}
   - component: {fileID: 95128020574458176}
   - component: {fileID: 50681864782570812}
-  - component: {fileID: 61128988377390022}
-  - component: {fileID: 114790448064063092}
   - component: {fileID: 70356789124614562}
+  - component: {fileID: 114790448064063092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -60,36 +59,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 10
-  m_Material: {fileID: 6200000, guid: c00dde62bd134a442954f4e4b28f0af8, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &61128988377390022
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744130822507992}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 1}
-  m_EdgeRadius: 0
 --- !u!70 &70356789124614562
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -133,8 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17a004980b54bf9a293c35ad99c810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  isOnLadder: 0
+  runSpeed: 5
   jumpSpeed: 25
+  climbSpeed: 5
 --- !u!212 &212816716817732168
 SpriteRenderer:
   m_ObjectHideFlags: 1

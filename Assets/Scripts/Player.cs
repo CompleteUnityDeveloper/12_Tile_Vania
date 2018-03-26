@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
-using System;
 
 public class Player : MonoBehaviour
 {
@@ -28,6 +27,22 @@ public class Player : MonoBehaviour
         ProcessJumps();
         FaceCorrectDirection();
         ClimbWhenOnLadder();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
+        {
+            isOnLadder = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
+        {
+            isOnLadder = false;
+        }
     }
 
     private void ClimbWhenOnLadder()
