@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: RuleTile
+  m_Name: Foreground Rule Tile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 21300014, guid: dff2c40ef1ad0f64d8d9f64e8fcfc417, type: 3}
   m_DefaultColliderType: 1

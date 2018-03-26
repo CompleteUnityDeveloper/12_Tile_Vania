@@ -217,6 +217,6 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 30
+    m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
