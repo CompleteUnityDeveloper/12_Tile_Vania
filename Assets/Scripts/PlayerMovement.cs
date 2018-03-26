@@ -4,13 +4,13 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{
-    [HideInInspector] // note new attribute
-    public bool isOnLadder = false; 
-    
+{    
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
     [SerializeField] float climbSpeed = 5f;
+
+    [HideInInspector]
+    public bool isOnLadder = false;
 
     Rigidbody2D myRigidBody;
 

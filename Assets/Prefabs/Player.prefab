@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50681864782570812}
   - component: {fileID: 70356789124614562}
   - component: {fileID: 114790448064063092}
+  - component: {fileID: 114069063150049880}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -96,6 +97,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114069063150049880
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744130822507992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd995e63e5ba4f778475eb3b929be5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114790448064063092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc17a004980b54bf9a293c35ad99c810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOnLadder: 0
   runSpeed: 5
   jumpSpeed: 25
   climbSpeed: 5
+  isOnLadder: 0
 --- !u!212 &212816716817732168
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -144,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300010, guid: 61531b8665e3f8c45bba0247d8cf4b57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LadderDetector : MonoBehaviour {
-
+public class LadderDetector : MonoBehaviour
+{
     PlayerMovement playerMovement;
 
     private void Start()
