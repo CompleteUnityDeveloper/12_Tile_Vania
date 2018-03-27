@@ -4,7 +4,8 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
-{    
+{
+    #region Instance Variables
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
     [SerializeField] float climbSpeed = 5f;
@@ -13,23 +14,28 @@ public class PlayerMovement : MonoBehaviour
     public bool isOnLadder = false;
 
     Rigidbody2D myRigidBody;
+    Animator myAnimator;
+    #endregion
 
+    #region Messages
     // Use this for initialization
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessHorizontal();
-        ProcessJumps();
-        FaceCorrectDirection();
-        ClimbWhenOnLadder();
+        Run();
+        Jump();
+        Turn();
+        Climb();
     }
+    #endregion
 
-    private void ClimbWhenOnLadder()
+    private void Climb()
     {
         if (!isOnLadder) { return; }
 
@@ -38,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody.velocity = playerVelocity;
     }
 
-    private void FaceCorrectDirection()
+    private void Turn()
     {
         bool playerIsNotMoving = Mathf.Abs(myRigidBody.velocity.x) < Mathf.Epsilon;
         if (playerIsNotMoving)
@@ -52,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void ProcessHorizontal()
+    private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // value between -1 and +1
 
@@ -60,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody.velocity = playerVelocity;
     }
 
-    private void ProcessJumps()
+    private void Jump()
     {
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
