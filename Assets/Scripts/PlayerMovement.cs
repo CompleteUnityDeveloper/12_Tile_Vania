@@ -37,8 +37,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Climb()
     {
-        if (!isOnLadder) { return; }
+        if (isOnLadder)
+        {
+            MoveVertically();
+        }
+        else
+        {
+            // do nothing
+        }
+    }
 
+    private void MoveVertically()
+    {
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 playerVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  // todo maybe force x to 0?
         myRigidBody.velocity = playerVelocity;
