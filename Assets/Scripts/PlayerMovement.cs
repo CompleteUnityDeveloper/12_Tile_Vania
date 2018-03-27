@@ -46,15 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Turn()
     {
-        bool playerIsNotMoving = Mathf.Abs(myRigidBody.velocity.x) < Mathf.Epsilon;
-        if (playerIsNotMoving)
-        {
-            // don't change player direction
-        }
-        else
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
+        if (playerHasHorizontalSpeed)
         {
             // reverse x scale to flip player horizontally
-            transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);  
+            transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
         }
     }
 
