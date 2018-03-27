@@ -61,9 +61,19 @@ public class PlayerMovement : MonoBehaviour
     private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // value between -1 and +1
-
         Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidBody.velocity.y);
         myRigidBody.velocity = playerVelocity;
+
+        bool playerIsNotMoving = Mathf.Abs(myRigidBody.velocity.x) < Mathf.Epsilon;
+        if (playerIsNotMoving)
+        {
+            myAnimator.SetBool("Run", false);
+        }
+        else
+        {
+            myAnimator.SetBool("Run", true);
+        }
+
     }
 
     private void Jump()
