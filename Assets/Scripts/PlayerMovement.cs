@@ -60,17 +60,9 @@ public class PlayerMovement : MonoBehaviour
         Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidBody.velocity.y);
         myRigidBody.velocity = playerVelocity;
 
-        bool playerIsNotMoving = Mathf.Abs(myRigidBody.velocity.x) < Mathf.Epsilon;
-        if (playerIsNotMoving)
-        {
-            myAnimator.SetBool("Run", false);
-        }
-        else
-        {
-            myAnimator.SetBool("Run", true);
-        }
-
-    }
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
+        myAnimator.SetBool("Run", playerHasHorizontalSpeed);
+     }
 
     private void Jump()
     {
