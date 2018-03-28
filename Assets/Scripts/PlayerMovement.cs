@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
     [SerializeField] float climbSpeed = 5f;
 
-    [HideInInspector]
-    public bool isOnLadder = false;
-
+    [HideInInspector] public bool isOnLadder = false;  // available to ladder collision component
+    float gravityScaleAtStart;
+    
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     #endregion
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+        gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
     }
 
     // Update is called once per frame
@@ -43,8 +44,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Jump();
-            myAnimator.SetBool("Climbing", false);
-            myRigidBody.gravityScale = 10;
         }
     }
     
@@ -66,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
             Vector2 jumpVelocityAdded = new Vector2(0f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityAdded;
         }
+        myAnimator.SetBool("Climbing", false);
+        myRigidBody.gravityScale = gravityScaleAtStart;
     }
         
     private void HorizontalMovement()
