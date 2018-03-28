@@ -44,13 +44,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
             myAnimator.SetBool("Climbing", false);
+            myRigidBody.gravityScale = 10;
         }
     }
-
- 
-
+    
     private void ClimbLadder()
     {
+        myRigidBody.gravityScale = 0;
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  // todo maybe force x to 0?
         myRigidBody.velocity = climbVelocity;
