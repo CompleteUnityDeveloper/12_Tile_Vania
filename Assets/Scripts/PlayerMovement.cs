@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
 
-    [HideInInspector] public bool isOnLadder = false;  // available to ladder collision component
+    [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     float gravityScaleAtStart;
     
     Rigidbody2D myRigidBody;
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void VerticalMovement()
     {
-        if (isOnLadder)
+        if (isNearLadder)
         {
             ClimbLadder();
         }

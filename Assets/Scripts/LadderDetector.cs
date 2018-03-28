@@ -17,7 +17,7 @@ public class LadderDetector : MonoBehaviour
     {
         if (other.gameObject.tag == climbLayerTag)
         {
-            playerMovement.isOnLadder = true;
+            playerMovement.isNearLadder = true;
         }
     }
 
@@ -25,7 +25,7 @@ public class LadderDetector : MonoBehaviour
     {
         if (other.gameObject.tag == climbLayerTag) 
         {
-            playerMovement.isOnLadder = false;
+            playerMovement.isNearLadder = false;
         }
     }
 }

@@ -59,7 +59,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 522eaf389689c714eb4e88cd13dce216, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd995e63e5ba4f778475eb3b929be5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  climbLayerTag: ClimbLayer
 --- !u!114 &114790448064063092
 MonoBehaviour:
   m_ObjectHideFlags: 1
