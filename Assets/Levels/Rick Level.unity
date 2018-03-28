@@ -37366,11 +37366,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.4388063
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.12581995
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.z
@@ -37484,7 +37484,7 @@ GameObject:
   - component: {fileID: 1297495283}
   m_Layer: 0
   m_Name: Ladder layer
-  m_TagString: Untagged
+  m_TagString: ClimbLayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37875,11 +37875,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 50681864782570812, guid: 777c0ace120f340e89f8e59f207c86e4,
+    - target: {fileID: 114069063150049880, guid: 777c0ace120f340e89f8e59f207c86e4,
         type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 522eaf389689c714eb4e88cd13dce216, type: 2}
+      propertyPath: ladderLayerTag
+      value: LadderLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 114069063150049880, guid: 777c0ace120f340e89f8e59f207c86e4,
+        type: 2}
+      propertyPath: climbLayerTag
+      value: ClimbLayer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
   m_IsPrefabParent: 0
@@ -40884,14 +40889,6 @@ CompositeCollider2D:
         Y: 30000000
       - X: 70000000
         Y: 30000000
-    - - X: 100000000
-        Y: 30000000
-      - X: 90000000
-        Y: 30000000
-      - X: 90000000
-        Y: 20000000
-      - X: 100000000
-        Y: 20000000
     - - X: 170000000
         Y: 30000000
       - X: 160000000
@@ -40900,6 +40897,14 @@ CompositeCollider2D:
         Y: 0
       - X: 170000000
         Y: 0
+    - - X: 100000000
+        Y: 30000000
+      - X: 90000000
+        Y: 30000000
+      - X: 90000000
+        Y: 20000000
+      - X: 100000000
+        Y: 20000000
     - - X: 300000000
         Y: 30000000
       - X: 270000000
@@ -40916,14 +40921,6 @@ CompositeCollider2D:
         Y: 10000000
       - X: -40000000
         Y: 10000000
-    - - X: 360000000
-        Y: 20000000
-      - X: 330000000
-        Y: 20000000
-      - X: 330000000
-        Y: 10000000
-      - X: 360000000
-        Y: 10000000
     - - X: 80000000
         Y: 10000000
       - X: 60000000
@@ -40936,6 +40933,14 @@ CompositeCollider2D:
         Y: 0
       - X: 80000000
         Y: 0
+    - - X: 360000000
+        Y: 20000000
+      - X: 330000000
+        Y: 20000000
+      - X: 330000000
+        Y: 10000000
+      - X: 360000000
+        Y: 10000000
     - - X: 150000000
         Y: 10000000
       - X: 140000000
@@ -41150,14 +41155,14 @@ CompositeCollider2D:
       - {x: 6, y: 4}
       - {x: 6, y: 3}
       - {x: 7, y: 3}
-    - - {x: 10, y: 3}
-      - {x: 9, y: 3}
-      - {x: 9, y: 2}
-      - {x: 10, y: 2}
     - - {x: 17, y: 3}
       - {x: 16, y: 3}
       - {x: 16, y: 0}
       - {x: 17, y: 0}
+    - - {x: 10, y: 3}
+      - {x: 9, y: 3}
+      - {x: 9, y: 2}
+      - {x: 10, y: 2}
     - - {x: 30, y: 3}
       - {x: 27, y: 3}
       - {x: 27, y: 2}
@@ -41166,16 +41171,16 @@ CompositeCollider2D:
       - {x: -7, y: 2}
       - {x: -7, y: 1}
       - {x: -4, y: 1}
-    - - {x: 36, y: 2}
-      - {x: 33, y: 2}
-      - {x: 33, y: 1}
-      - {x: 36, y: 1}
     - - {x: 8, y: 1}
       - {x: 6, y: 1}
       - {x: 6, y: 2}
       - {x: 4, y: 2}
       - {x: 4, y: 0}
       - {x: 8, y: 0}
+    - - {x: 36, y: 2}
+      - {x: 33, y: 2}
+      - {x: 33, y: 1}
+      - {x: 36, y: 1}
     - - {x: 15, y: 1}
       - {x: 14, y: 1}
       - {x: 14, y: -2}

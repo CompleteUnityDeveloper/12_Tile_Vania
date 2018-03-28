@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Instance Variables
     [SerializeField] float runSpeed = 5f;
-    [SerializeField] float jumpSpeed = 5f; // todo consider Vector2
+    [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
 
     [HideInInspector] public bool isOnLadder = false;  // available to ladder collision component
@@ -51,19 +51,19 @@ public class PlayerMovement : MonoBehaviour
     {
         myRigidBody.gravityScale = 0;
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  // todo maybe force x to 0?
+        Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  
         myRigidBody.velocity = climbVelocity;
 
-        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
-        myAnimator.SetBool("Climbing", playerHasVerticalSpeed);
+        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon; 
+        myAnimator.SetBool("Climbing", playerHasVerticalSpeed); // TODO consider float for animation conditions
     }
 
     private void Jump()
     {
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
-            Vector2 jumpVelocityAdded = new Vector2(0f, jumpSpeed);
-            myRigidBody.velocity += jumpVelocityAdded;
+            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+            myRigidBody.velocity += jumpVelocityToAdd;
         }
         myAnimator.SetBool("Climbing", false);
         myRigidBody.gravityScale = gravityScaleAtStart;
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody.velocity = playerVelocity;
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
-        myAnimator.SetBool("Running", playerHasHorizontalSpeed);
+        myAnimator.SetBool("Running", playerHasHorizontalSpeed);  
      }
 
     private void FlipSprite()
@@ -88,5 +88,4 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
         }
     }
-
 }

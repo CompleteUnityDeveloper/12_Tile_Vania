@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class LadderDetector : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    [SerializeField] string climbLayerTag;
 
+    PlayerMovement playerMovement;
+    
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -13,7 +15,7 @@ public class LadderDetector : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
+        if (other.gameObject.tag == climbLayerTag)
         {
             playerMovement.isOnLadder = true;
         }
@@ -21,7 +23,7 @@ public class LadderDetector : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "Ladder layer") // todo paramerise or eliminate
+        if (other.gameObject.tag == climbLayerTag) 
         {
             playerMovement.isOnLadder = false;
         }
