@@ -12,7 +12,7 @@ public class LadderDetector : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         if (!GameObject.Find(climbLayerName)) {
-            Debug.LogWarning("Named climb layer not found");
+            Debug.LogWarning("Named climb layer not found"); // todo genericise
         }
     }
 

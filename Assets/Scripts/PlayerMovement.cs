@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
-    //[HideInInspector]
-    public bool isOnFloor = false;
+    [HideInInspector] public bool isOnFloor = false;
+    [HideInInspector] public bool ballsAreWet = false;
 
     float gravityScaleAtStart;
     
@@ -35,6 +36,20 @@ public class PlayerMovement : MonoBehaviour
         // Physics may need to be moved to FixedUpdate()
         VerticalMovement();
         HorizontalMovement();
+        LookAfterBalls();
+    }
+
+    private void LookAfterBalls()
+    {
+        if (ballsAreWet)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        print("Aida.... my ball freezed again");
     }
 
     private void LateUpdate() // Use for updating view
