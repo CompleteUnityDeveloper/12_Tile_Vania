@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
-    [HideInInspector] public bool ballsAreWet = false;
+    [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
 
     float gravityScaleAtStart;
+    bool isInDeathThrows = false;
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
@@ -34,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Called in Update so input processes properly
         // Physics may need to be moved to FixedUpdate()
+        if (isInDeathThrows) { return; }
+
         VerticalMovement();
         HorizontalMovement();
         LookAfterBalls();
@@ -43,13 +47,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ballsAreWet)
         {
-            Die();
+            StartCoroutine(RunDramaticDeathSequence());
         }
     }
 
-    private void Die()
+    private IEnumerator RunDramaticDeathSequence()
     {
-        print("Aida.... my ball freezed again");
+        isInDeathThrows = true;
+        myRigidBody.freezeRotation = false;
+        myRigidBody.velocity = deathKick;
+
+
+        yield return null;
     }
 
     private void LateUpdate() // Use for updating view

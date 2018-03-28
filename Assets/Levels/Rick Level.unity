@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4494644703685036, guid: d84b8f4c259a746ac90f26bf7b51a425, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: -4.93
       objectReference: {fileID: 0}
     - target: {fileID: 4494644703685036, guid: d84b8f4c259a746ac90f26bf7b51a425, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 4494644703685036, guid: d84b8f4c259a746ac90f26bf7b51a425, type: 2}
       propertyPath: m_LocalPosition.z
@@ -35903,7 +35903,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1203719020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.77, z: 0}
+  m_LocalPosition: {x: 0, y: 1.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1806032858}
@@ -35942,7 +35942,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
@@ -49133,11 +49133,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4674220278293530, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: -4.93
       objectReference: {fileID: 0}
     - target: {fileID: 4674220278293530, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: -3.07
       objectReference: {fileID: 0}
     - target: {fileID: 4674220278293530, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
       propertyPath: m_LocalPosition.z
@@ -49162,6 +49162,11 @@ Prefab:
     - target: {fileID: 4674220278293530, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212816716817732168, guid: 777c0ace120f340e89f8e59f207c86e4,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
@@ -49288,7 +49293,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
