@@ -30,31 +30,44 @@ public class PlayerMovement : MonoBehaviour
     {
         Run();
         Jump();
-        Turn();
-        Climb();
+        FlipSprite();
+        VerticalMovement();
     }
     #endregion
 
-    private void Climb()
+    private void VerticalMovement()
     {
         if (isOnLadder)
         {
-            MoveVertically();
+            ClimbLadder();
         }
         else
         {
-            // do nothing
+            Jump();
         }
     }
 
-    private void MoveVertically()
+    private void ClimbLadder()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 playerVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  // todo maybe force x to 0?
         myRigidBody.velocity = playerVelocity;
+
+        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
+        myAnimator.SetBool("Climb", playerHasVerticalSpeed);
     }
 
-    private void Turn()
+    private void Jump()
+    {
+        if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
+        {
+            Vector2 jumpVelocityAdded = new Vector2(0f, jumpSpeed);
+            myRigidBody.velocity += jumpVelocityAdded;
+        }
+    }
+
+
+    private void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
@@ -74,12 +87,5 @@ public class PlayerMovement : MonoBehaviour
         myAnimator.SetBool("Run", playerHasHorizontalSpeed);
      }
 
-    private void Jump()
-    {
-        if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
-        {
-            Vector2 jumpVelocityAdded = new Vector2(0f, jumpSpeed);
-            myRigidBody.velocity += jumpVelocityAdded;
-        }
-    }
+    
 }

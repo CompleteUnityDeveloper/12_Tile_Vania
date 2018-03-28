@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
-  jumpSpeed: 25
+  jumpSpeed: 13
   climbSpeed: 5
   isOnLadder: 0
 --- !u!212 &212816716817732168
