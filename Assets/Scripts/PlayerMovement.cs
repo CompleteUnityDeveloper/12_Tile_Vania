@@ -13,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public bool isOnLadder = false;
 
-    bool playerHasVerticalSpeed;
-    bool playerHasHorizontalSpeed;
-
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     #endregion
@@ -45,16 +42,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            myAnimator.SetBool("Climbing", false);
             Jump();
+            myAnimator.SetBool("Climbing", false);
         }
     }
 
-    void HasVerticalSpeed()
-    {
-        playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
-        print(playerHasVerticalSpeed);
-    }
+ 
 
     private void ClimbLadder()
     {
@@ -62,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  // todo maybe force x to 0?
         myRigidBody.velocity = climbVelocity;
 
-        
+        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("Climbing", playerHasVerticalSpeed);
     }
 
@@ -74,7 +67,16 @@ public class PlayerMovement : MonoBehaviour
             myRigidBody.velocity += jumpVelocityAdded;
         }
     }
+        
+    private void HorizontalMovement()
+    {
+        float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // value between -1 and +1
+        Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidBody.velocity.y);
+        myRigidBody.velocity = playerVelocity;
 
+        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
+        myAnimator.SetBool("Running", playerHasHorizontalSpeed);
+     }
 
     private void FlipSprite()
     {
@@ -86,15 +88,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void HorizontalMovement()
-    {
-        float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // value between -1 and +1
-        Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidBody.velocity.y);
-        myRigidBody.velocity = playerVelocity;
-
-        bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
-        myAnimator.SetBool("Running", playerHasHorizontalSpeed);
-     }
-
-    
 }
