@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SPA_Water Tile
+  m_Name: SPA_Water Surface
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 5c2df4c0a8f584a47860dc1abf15142a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
