@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
+    //[HideInInspector]
+    public bool isOnFloor = false;
+
     float gravityScaleAtStart;
     
     Rigidbody2D myRigidBody;
@@ -26,12 +29,17 @@ public class PlayerMovement : MonoBehaviour
         gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Called in Update so input processes properly
+        // Physics may need to be moved to FixedUpdate()
         VerticalMovement();
         HorizontalMovement();
-        FlipSprite();
+    }
+
+    private void LateUpdate() // Use for updating view
+    {
+        FlipSprite(); // Here so movement has settled
     }
     #endregion
 
@@ -49,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
     
     private void ClimbLadder()
     {
-        myRigidBody.gravityScale = 0;
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  
         myRigidBody.velocity = climbVelocity;
@@ -60,13 +67,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        if (!isOnFloor) { return; }
+
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityToAdd;
         }
         myAnimator.SetBool("Climbing", false);
-        myRigidBody.gravityScale = gravityScaleAtStart;
     }
         
     private void HorizontalMovement()
