@@ -35885,6 +35885,10 @@ GameObject:
   - component: {fileID: 1203719021}
   - component: {fileID: 1203719023}
   - component: {fileID: 1203719022}
+  - component: {fileID: 1203719027}
+  - component: {fileID: 1203719026}
+  - component: {fileID: 1203719025}
+  - component: {fileID: 1203719024}
   m_Layer: 0
   m_Name: Water Layer
   m_TagString: Untagged
@@ -48673,9 +48677,88 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 1
+    m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
+--- !u!114 &1203719024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203719020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8132773dcf042419a6ce5b1877c5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floodRate: 0.2
+--- !u!66 &1203719025
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203719020}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1203719027}
+    m_ColliderPaths:
+    - - X: -170624992
+        Y: -80000000
+      - X: -170624992
+        Y: -290000000
+      - X: 500624992
+        Y: -290000000
+      - X: 500624992
+        Y: -80000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 50.0625, y: -8}
+      - {x: -17.0625, y: -8}
+      - {x: -17.0625, y: -29}
+      - {x: 50.0625, y: -29}
+  m_VertexDistance: 0.0005
+--- !u!50 &1203719026
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203719020}
+  m_BodyType: 1
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!19719996 &1203719027
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1203719020}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &1297495279
 GameObject:
   m_ObjectHideFlags: 0
