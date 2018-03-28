@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class LadderDetector : MonoBehaviour
 {
-    [SerializeField] string climbLayerTag;
+    [SerializeField] string climbLayerName;
 
     PlayerMovement playerMovement;
     
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        if (!GameObject.Find(climbLayerName)) {
+            Debug.LogWarning("Named climb layer not found");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == climbLayerTag)
+        if (other.gameObject.name == climbLayerName)
         {
             playerMovement.isNearLadder = true;
         }
@@ -23,7 +26,7 @@ public class LadderDetector : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == climbLayerTag) 
+        if (other.gameObject.name == climbLayerName) 
         {
             playerMovement.isNearLadder = false;
         }
