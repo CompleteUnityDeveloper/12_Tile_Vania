@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     #region Instance Variables
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
-    [SerializeField] float climbSpeed = 5f;
+    [SerializeField] float climbSpeed = 5f; // todo separate out climber
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody.freezeRotation = false;
         myRigidBody.velocity = deathKick;
 
-
         yield return null;
     }
 
@@ -71,10 +70,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isNearLadder)
         {
+            myRigidBody.gravityScale = 0;
             ClimbLadder();
         }
         else
         {
+            myRigidBody.gravityScale = gravityScaleAtStart;
             Jump();
         }
     }
