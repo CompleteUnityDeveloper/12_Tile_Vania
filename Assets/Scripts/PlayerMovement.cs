@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
     [SerializeField] AudioClip[] jumpSounds;
+    [SerializeField] AudioClip deathSound;
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
@@ -59,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
         isInDeathThrows = true;
         myRigidBody.freezeRotation = false;
         myRigidBody.velocity = deathKick;
+        audioSource.PlayOneShot(deathSound);
 
 
         yield return null;
