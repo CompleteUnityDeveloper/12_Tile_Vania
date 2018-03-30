@@ -17,9 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
     [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
+    bool isInDeathThrows = false;
 
     float gravityScaleAtStart;
-    bool isInDeathThrows = false;
+   
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
