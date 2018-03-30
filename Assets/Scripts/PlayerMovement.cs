@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
+    [SerializeField] AudioClip[] jumpSounds;
 
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
+    AudioSource audioSource;
     #endregion
 
     #region Messages
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -97,6 +100,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityToAdd;
+            var clip = jumpSounds[UnityEngine.Random.Range(0, jumpSounds.Length)];
+            audioSource.PlayOneShot(clip);
         }
         myAnimator.SetBool("Climbing", false);
     }
