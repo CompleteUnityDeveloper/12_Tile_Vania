@@ -44,13 +44,14 @@ public class EnemyMovement : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        //facingRight = !facingRight;
+        // Flip the enemy sprite in x
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
 
-    void OnTriggerEnter2D(Collider2D other) // thou shalt copy and paste messages
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Player")
+        // safer to find by type than a string-referenced name
+        if (other.gameObject.GetComponent<PlayerMovement>())
         {
             playerMovement.collidedWithEnemy = true;
         }
