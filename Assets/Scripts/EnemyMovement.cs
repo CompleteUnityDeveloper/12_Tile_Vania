@@ -7,18 +7,23 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float slowestSpeed = 0.5f;
     [SerializeField] float fastestSpeed = 2f;
+    [SerializeField] string climbLayerName;
+
+    private void Start()
+    {
+        if (!GameObject.Find(climbLayerName))
+        {
+            Debug.LogWarning("Named climb layer not found"); // todo genericise
+        }
+        myRigidBody = GetComponent<Rigidbody2D>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
+    }
 
     float moveSpeed;
 
     Rigidbody2D myRigidBody;
     PlayerMovement playerMovement;
-
-    void Start ()
-    {
-        myRigidBody = GetComponent<Rigidbody2D>();
-        playerMovement = FindObjectOfType<PlayerMovement>();
-        moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
-    }
     
     void Update ()
     {
@@ -45,6 +50,14 @@ public class EnemyMovement : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         // Flip the enemy sprite in x
+        if (other.gameObject.name != climbLayerName)
+        {
+            ReverseDiretion();
+        }
+    }
+
+    void ReverseDiretion()
+    {
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
 
