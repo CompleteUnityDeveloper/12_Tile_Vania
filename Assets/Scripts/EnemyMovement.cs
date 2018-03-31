@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-    [SerializeField] float moveSpeed = .01f;
+    float moveSpeed = 0f;
+    [SerializeField] float slowestSpeed = 0.5f;
+    [SerializeField] float fastestSpeed = 2f;
 
     bool facingRight = false;
-
     Rigidbody2D myRigidBody;
-    
 
     void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
+        moveSpeed = moveSpeed + Random.Range(slowestSpeed, fastestSpeed);
     }
-
-
+    
     void Update () {
         MoveHorizontally();        
     }
@@ -39,5 +39,4 @@ public class EnemyMovement : MonoBehaviour {
         facingRight = !facingRight;
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
-
 }
