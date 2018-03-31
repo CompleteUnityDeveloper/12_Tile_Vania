@@ -10,9 +10,11 @@ public class EnemyMovement : MonoBehaviour {
 
     bool facingRight = false;
     Rigidbody2D myRigidBody;
+    PlayerMovement playerMovement;
 
     void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
+        playerMovement = GetComponent<PlayerMovement>();
         moveSpeed = moveSpeed + Random.Range(slowestSpeed, fastestSpeed);
     }
     
@@ -39,4 +41,14 @@ public class EnemyMovement : MonoBehaviour {
         facingRight = !facingRight;
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
+
+    void OnTriggerEnter2d(Collider2D other)
+    {
+        if (other.gameObject.name == "Player")
+        {
+            print("banged");
+            playerMovement.collidedWithEnemy = true;
+        }
+    }
+
 }

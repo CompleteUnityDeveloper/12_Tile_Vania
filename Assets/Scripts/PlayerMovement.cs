@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
     [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
+    [HideInInspector] public bool collidedWithEnemy;
     bool isInDeathThrows = false;
 
     float gravityScaleAtStart;
@@ -45,12 +46,12 @@ public class PlayerMovement : MonoBehaviour
 
         VerticalMovement();
         HorizontalMovement();
-        LookAfterBalls();
+        PlayerDeath();
     }
 
-    private void LookAfterBalls()
+    private void PlayerDeath()
     {
-        if (ballsAreWet)
+        if (ballsAreWet || collidedWithEnemy)
         {
             StartCoroutine(RunDramaticDeathSequence());
         }
