@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// note this is doing more than enemy movement
 public class EnemyMovement : MonoBehaviour {
 
     float moveSpeed = 0f;
@@ -12,9 +13,10 @@ public class EnemyMovement : MonoBehaviour {
     Rigidbody2D myRigidBody;
     PlayerMovement playerMovement;
 
-    void Start () {
+    void Start ()
+    {
         myRigidBody = GetComponent<Rigidbody2D>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
         moveSpeed = moveSpeed + Random.Range(slowestSpeed, fastestSpeed);
     }
     
@@ -42,11 +44,10 @@ public class EnemyMovement : MonoBehaviour {
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
 
-    void OnTriggerEnter2d(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other) // thou shalt copy and paste messages
     {
         if (other.gameObject.name == "Player")
         {
-            print("banged");
             playerMovement.collidedWithEnemy = true;
         }
     }

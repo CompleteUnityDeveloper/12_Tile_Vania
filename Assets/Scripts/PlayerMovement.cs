@@ -4,6 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 using System;
 
+// Note no longer just does player movement and is getting big
 public class PlayerMovement : MonoBehaviour
 {
     #region Instance Variables
