@@ -65,7 +65,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody.velocity = deathKick;
         audioSource.PlayOneShot(deathSound);
 
-
         yield return null;
     }
 

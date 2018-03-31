@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // note this is doing more than enemy movement
-public class EnemyMovement : MonoBehaviour {
-
-    float moveSpeed = 0f;
+public class EnemyMovement : MonoBehaviour
+{
     [SerializeField] float slowestSpeed = 0.5f;
     [SerializeField] float fastestSpeed = 2f;
 
-    bool facingRight = false;
+    bool facingRight = false; // todo remove unneessary cache
+    float moveSpeed = 0f;
+
     Rigidbody2D myRigidBody;
     PlayerMovement playerMovement;
 
@@ -17,24 +18,23 @@ public class EnemyMovement : MonoBehaviour {
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         playerMovement = FindObjectOfType<PlayerMovement>();
-        moveSpeed = moveSpeed + Random.Range(slowestSpeed, fastestSpeed);
+        moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
     }
     
-    void Update () {
+    void Update ()
+    {
         MoveHorizontally();        
     }
 
-    private void MoveHorizontally()
+    void MoveHorizontally()
     {
-        if (facingRight == true)
+        if (facingRight)
         {
-            Vector2 enemyVelocity = new Vector2(moveSpeed, 0f);
-            myRigidBody.velocity = enemyVelocity;
+            myRigidBody.velocity = new Vector2(moveSpeed, 0f);
         }
         else
         {
-            Vector2 enemyVelocity = new Vector2(-moveSpeed, 0f);
-            myRigidBody.velocity = enemyVelocity;
+            myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
         }
     } 
 
@@ -51,5 +51,4 @@ public class EnemyMovement : MonoBehaviour {
             playerMovement.collidedWithEnemy = true;
         }
     }
-
 }
