@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// todo genericise this and flood detector as nearly identical
 public class LadderDetector : MonoBehaviour
 {
     [SerializeField] string climbLayerName;
@@ -10,8 +11,9 @@ public class LadderDetector : MonoBehaviour
     
     private void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
-        if (!GameObject.Find(climbLayerName)) {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        if (!GameObject.Find(climbLayerName))
+        {
             Debug.LogWarning("Named climb layer not found"); // todo genericise
         }
     }

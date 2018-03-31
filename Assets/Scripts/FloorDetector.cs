@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// todo note this is VERY similar to LadderDetector so far
+
 public class FloorDetector : MonoBehaviour
 {
     [SerializeField] string floorLayerName;
