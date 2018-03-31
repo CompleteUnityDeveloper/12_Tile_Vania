@@ -36,7 +36,6 @@ public class EnemyMovement : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        print("No longer in contact with " + other.transform.name);
         facingRight = !facingRight;
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
