@@ -8,8 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float slowestSpeed = 0.5f;
     [SerializeField] float fastestSpeed = 2f;
 
-    bool facingRight = false; // todo remove unneessary cache
-    float moveSpeed = 0f;
+    float moveSpeed;
 
     Rigidbody2D myRigidBody;
     PlayerMovement playerMovement;
@@ -28,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
 
     void MoveHorizontally()
     {
-        if (facingRight)
+        if (IsFacingLeft())
         {
             myRigidBody.velocity = new Vector2(moveSpeed, 0f);
         }
@@ -38,9 +37,14 @@ public class EnemyMovement : MonoBehaviour
         }
     } 
 
+    bool IsFacingLeft()
+    {
+        return transform.localScale.x < 0;
+    }
+
     void OnTriggerExit2D(Collider2D other)
     {
-        facingRight = !facingRight;
+        //facingRight = !facingRight;
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
 
