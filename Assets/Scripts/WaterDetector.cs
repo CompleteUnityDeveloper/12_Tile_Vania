@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoggyBalls : MonoBehaviour {
+
+public class WaterDetector : MonoBehaviour {
 
     [SerializeField] string waterLayerName;
  
@@ -11,7 +12,6 @@ public class SoggyBalls : MonoBehaviour {
     private void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
-
         if (!GameObject.Find(waterLayerName))
         {
             Debug.LogWarning("Named water layer not found");

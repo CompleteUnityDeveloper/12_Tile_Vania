@@ -15,14 +15,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip[] jumpSounds;
     [SerializeField] AudioClip deathSound;
 
+    // todo remove all 4 caches
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
     [HideInInspector] public bool isOnFloor = false;
     [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
     [HideInInspector] public bool collidedWithEnemy;
-    bool isInDeathThrows = false;
 
+    bool isInDeathThrows = false;
     float gravityScaleAtStart;
-   
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         FlipSprite(); // Here so movement has settled
     }
     #endregion
-
+            
     private void VerticalMovement()
     {
         if (isNearLadder)

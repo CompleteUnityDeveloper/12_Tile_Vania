@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelExit : MonoBehaviour {
+public class LevelExit : MonoBehaviour
+{
+    [SerializeField] float levelExitSlowMoFactor = 0.1f;
+    [SerializeField] float levelLoadDelay = 2f;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,8 +18,8 @@ public class LevelExit : MonoBehaviour {
 
     IEnumerator LoadNextLevel()
     {
-        Time.timeScale = 0.1f;
-        yield return new WaitForSecondsRealtime(2);
+        Time.timeScale = levelExitSlowMoFactor;
+        yield return new WaitForSecondsRealtime(levelLoadDelay);
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.sceneCount + 1);
     }
