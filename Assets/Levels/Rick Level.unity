@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 70, y: -70}
+  m_AnchoredPosition: {x: 86.04346, y: -78.77179}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &41356450
@@ -36682,15 +36682,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.93
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalRotation.x
@@ -36730,7 +36730,7 @@ Prefab:
     - target: {fileID: 20963527952864554, guid: 1d475cff6185e4e7d889d6c62a1a1f79,
         type: 2}
       propertyPath: orthographic size
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4209641093244516, guid: 1d475cff6185e4e7d889d6c62a1a1f79, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36906,10 +36906,10 @@ RectTransform:
   m_Father: {fileID: 2040360300}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754.5, y: 459.2}
-  m_SizeDelta: {x: 109.3, y: 121.7}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 220.14331, y: -78.77179}
+  m_SizeDelta: {x: 109.3, y: 121.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950848325
 MonoBehaviour:
@@ -36961,7 +36961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047e521d8acdc524ab4530c072d2a48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 3
+  startingLives: 3
 --- !u!4 &981150548 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039509059448848, guid: da4e3148a39dce045a8bf763a9b31dd4,
