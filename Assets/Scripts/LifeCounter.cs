@@ -5,28 +5,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LifeCounter : MonoBehaviour {
-
-    [SerializeField] int startingLives = 3;
-    int currentLives;
-    static bool created = false;
+public class LifeCounter : MonoBehaviour
+{
+    static int currentLives = 3; // static so exists in one place, not on instances
     Text livesText;
-
-    // Note: Might need a different strategy with this as we need a way to store data across scenes
-    // (eg. Lives, coins, kills, etc). Currently they are reset.
 
     void Start()
     {
-        currentLives = startingLives;
         livesText = GetComponent<Text>();
         livesText.text = currentLives.ToString();
     }
 
-     public void ProcessTheAfterLife()
+    public void ProcessTheAfterLife()
     {
-        if(currentLives > 0)
+        if (currentLives > 0)
         {
-            SceneManager.LoadScene(SceneManager.sceneCount);  // TODO: need to stop the level load from reseting lives back to starting value
+            SceneManager.LoadScene(SceneManager.sceneCount);
             TakeLife();
         }
         else

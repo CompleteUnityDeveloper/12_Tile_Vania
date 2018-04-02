@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212392570381465598}
   - component: {fileID: 50212162279932066}
   - component: {fileID: 95477856593182780}
-  - component: {fileID: 114903040677865578}
   - component: {fileID: 61263238606153924}
   - component: {fileID: 61745434864136896}
+  - component: {fileID: 114903040677865578}
   - component: {fileID: 114554337998228794}
   m_Layer: 0
   m_Name: Enemy
@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1371400153887420}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.384, y: 5.5, z: 0}
+  m_LocalPosition: {x: -6.929686, y: 4.496412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,6 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44dff5dac1c17d2429ff0e0f44228799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lowestRValue: 0
+  lowestGValue: 0.5
+  lowestBValue: 0.5
 --- !u!114 &114903040677865578
 MonoBehaviour:
   m_ObjectHideFlags: 1
