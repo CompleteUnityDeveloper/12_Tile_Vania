@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (ballsAreWet || collidedWithEnemy)
         {
             StartCoroutine(RunDramaticDeathSequence());
-            GetComponent<LifeCounter>().TakeLife();
+            FindObjectOfType<LifeCounter>().TakeLife();
         }
     }
 
