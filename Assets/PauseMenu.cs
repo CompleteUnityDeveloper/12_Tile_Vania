@@ -8,8 +8,7 @@ public class PauseMenu : MonoBehaviour {
 
     public static bool GameIsPaused = false;
     [SerializeField] GameObject pauseMenuUI;
-    [SerializeField] Scene mainMenu;
-
+ 
 	// Update is called once per frame
 	void Update ()
     {
@@ -42,13 +41,14 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Resume();
     }
 
     public void QuitToMainMenu()
     {
-        print("quitting game");
+        SceneManager.LoadScene(0);
+        Resume();
     }
  
 }
