@@ -18,6 +18,6 @@ public class LevelExit : MonoBehaviour {
         Time.timeScale = 0.1f;
         yield return new WaitForSecondsRealtime(2);
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.sceneCount - 1);
+        SceneManager.LoadScene(SceneManager.sceneCount + 1);
     }
 }
