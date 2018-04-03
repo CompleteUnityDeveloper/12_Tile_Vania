@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
-    AudioSource audioSource;
+    AudioSource myAudioSource;
     #endregion
 
     #region Messages
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
-        audioSource = GetComponent<AudioSource>();
+        myAudioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -64,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         isInDeathThrows = true;
         myRigidBody.freezeRotation = false;
         myRigidBody.velocity = deathKick;
-        audioSource.PlayOneShot(deathSound);
+        myAudioSource.PlayOneShot(deathSound);
 
         yield return null;
     }
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityToAdd;
             var clip = jumpSounds[UnityEngine.Random.Range(0, jumpSounds.Length)];
-            audioSource.PlayOneShot(clip);
+            myAudioSource.PlayOneShot(clip);
         }
         myAnimator.SetBool("Climbing", false);
     }

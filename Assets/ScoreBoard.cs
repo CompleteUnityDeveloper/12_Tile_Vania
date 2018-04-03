@@ -1,16 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreBoard : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static int score;  // still need to discuss and figure out this notion of statics
+
+    Text scoreBoardText;
+
+    void Start()
+    {
+        scoreBoardText = GetComponent<Text>();
+        scoreBoardText.text = score.ToString();
+    }
+
+    void Update()
+    {
+        scoreBoardText.text = score.ToString();    
+    }
+
+    public static void AddPoints (int pointsToAdd)
+    {
+        score += pointsToAdd;
+    }
 }
