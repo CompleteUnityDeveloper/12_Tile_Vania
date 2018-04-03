@@ -5,14 +5,7 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour {
 
     [SerializeField] int pointsForCoinPickup = 100;
-    [SerializeField] AudioClip coinPickupSound;
-    AudioSource myAudioSource;
-
-    void Start()
-    {
-        myAudioSource = GetComponent<AudioSource>();
-    }
-
+ 
     void OnTriggerEnter2D (Collider2D other)
     {
         if (!other.GetComponent<PlayerMovement>())
@@ -20,6 +13,7 @@ public class CoinPickup : MonoBehaviour {
         else
         {
             ScoreBoard.AddPoints(pointsForCoinPickup);
+            FindObjectOfType<SFX>().PlayCoinSound();
         }
         Destroy(gameObject);       
     }
