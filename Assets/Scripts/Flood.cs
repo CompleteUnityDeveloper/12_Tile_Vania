@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flood : MonoBehaviour {
-
+public class Flood : MonoBehaviour
+{
     [SerializeField] float floodRate = 0.2f;
 	
 	// Update is called once per frame

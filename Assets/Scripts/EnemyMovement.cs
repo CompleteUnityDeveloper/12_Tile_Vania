@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-// note this is doing more than enemy movement
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float slowestSpeed = 0.5f;
     [SerializeField] float fastestSpeed = 2f;
+
+    float moveSpeed;
+    Rigidbody2D myRigidBody;
+    PlayerMovement playerMovement;
 
     private void Start()
     {
@@ -14,11 +16,6 @@ public class EnemyMovement : MonoBehaviour
         playerMovement = FindObjectOfType<PlayerMovement>();
         moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
     }
-
-    float moveSpeed;
-
-    Rigidbody2D myRigidBody;
-    PlayerMovement playerMovement;
     
     void Update ()
     {
@@ -50,7 +47,6 @@ public class EnemyMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // safer to find by type than a string-referenced name
         if (other.gameObject.GetComponent<PlayerMovement>())
         {
             playerMovement.collidedWithEnemy = true;
