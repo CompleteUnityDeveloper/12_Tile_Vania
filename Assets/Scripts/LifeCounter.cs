@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour
 {
+    [SerializeField] Text livesText;
+
     int currentLives = 3;
-    Text livesText;
+    //Text livesText;
 
     void Start()
     {
-        livesText = GetComponent<Text>();
+        //livesText = GetComponent<Text>();
         livesText.text = currentLives.ToString();
     }
 

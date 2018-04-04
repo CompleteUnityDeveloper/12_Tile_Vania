@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flood : MonoBehaviour
+public class VerticalScroll : MonoBehaviour
 {
-    [SerializeField] float floodRate = 0.2f;
+    [Tooltip ("Game units per second")]
+    [SerializeField] float scrollRate = 0.2f;
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float yMove = floodRate * Time.deltaTime;
+        float yMove = scrollRate * Time.deltaTime;
         transform.Translate(new Vector2(0f, yMove));
 	}
 }

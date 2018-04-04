@@ -39512,7 +39512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8132773dcf042419a6ce5b1877c5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floodRate: 0.2
+  scrollRate: 0.2
 --- !u!66 &1203719025
 CompositeCollider2D:
   m_ObjectHideFlags: 0
