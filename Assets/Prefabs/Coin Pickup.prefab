@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b851e0a9b57988948bb16e7b8b2b98eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsForCoinPickup: 100
   coinPickupSound: {fileID: 8300000, guid: 45e283d7ccbab9749af3a0df1b18b5ea, type: 3}
 --- !u!212 &212261692423946694
 SpriteRenderer:

@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     // todo remove all 4 caches
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
-    [HideInInspector] public bool isOnFloor = false;
+     public bool isOnFloor = false;
     [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
     [HideInInspector] public bool collidedWithEnemy;
 
@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+
         if (!isOnFloor) { return; }
 
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press

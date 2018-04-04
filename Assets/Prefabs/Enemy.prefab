@@ -160,7 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slowestSpeed: 0.5
   fastestSpeed: 2
-  climbLayerName: Ladder layer
 --- !u!212 &212392570381465598
 SpriteRenderer:
   m_ObjectHideFlags: 1

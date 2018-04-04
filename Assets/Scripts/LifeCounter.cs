@@ -22,7 +22,8 @@ public class LifeCounter : MonoBehaviour
     {
         if (currentLives > 1)
         {
-            SceneManager.LoadScene(SceneManager.sceneCount);
+            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentSceneIndex);
             TakeLife();
         }
         else
