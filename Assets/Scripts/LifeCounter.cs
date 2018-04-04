@@ -20,7 +20,7 @@ public class LifeCounter : MonoBehaviour
 
     public void ProcessTheAfterLife()
     {
-        if (currentLives > 0)
+        if (currentLives > 1)
         {
             SceneManager.LoadScene(SceneManager.sceneCount);
             TakeLife();
