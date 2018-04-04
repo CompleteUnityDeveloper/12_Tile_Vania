@@ -9,22 +9,6 @@ public class ScoreBoard : MonoBehaviour {
 
     Text scoreBoardText;
 
-    void Awake()
-    {
-        int numScoreBoards = FindObjectsOfType<ScoreBoard>().Length;
-        if (numScoreBoards > 1)
-        {
-            print("Asked to destroy myself:" + gameObject);
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            print("Asked not to destroy myself:" + gameObject);
-
-        }
-    }
-
     void Start()
     {
         scoreBoardText = GetComponent<Text>();

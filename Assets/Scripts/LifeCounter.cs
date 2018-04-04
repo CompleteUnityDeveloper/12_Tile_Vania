@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LifeCounter : MonoBehaviour
 {
-    static int currentLives = 3; // static so exists in one place, not on instances
+    int currentLives = 3;
     Text livesText;
 
     void Start()

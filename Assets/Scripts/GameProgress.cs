@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameProgress : MonoBehaviour {
+public class HUD : MonoBehaviour {
 
     void Awake()
     {
-        int numGameProgresses = FindObjectsOfType<GameProgress>().Length;
-        if (numGameProgresses > 1)
+        int numHUDs = FindObjectsOfType<HUD>().Length;
+        if (numHUDs > 1)
         {
             Destroy(gameObject);
         }
