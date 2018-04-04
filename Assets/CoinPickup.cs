@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinPickup : MonoBehaviour {
 
-    [SerializeField] int pointsForCoinPickup = 100;
+    int pointsForCoinPickup = 100;
  
     void OnTriggerEnter2D (Collider2D other)
     {
