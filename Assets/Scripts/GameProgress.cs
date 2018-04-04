@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HUD : MonoBehaviour {
+public class GameProgress : MonoBehaviour {
+
+    // player lives
+    // player score
+    // dont destroy on load
+    // handle scene loading
+    // singleton to ensure we dont have multiple
+    // remember the level we are on - scene manager
+
 
     void Awake()
     {
-        int numHUDs = FindObjectsOfType<HUD>().Length;
-        if (numHUDs > 1)
+        int numGameProgresses = FindObjectsOfType<GameProgress>().Length;
+        if (numGameProgresses > 1)
         {
             Destroy(gameObject);
         }
@@ -16,4 +24,10 @@ public class HUD : MonoBehaviour {
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    public void ResetGameProgress()
+    {
+        Destroy(gameObject);
+    }
+
 }

@@ -25,7 +25,9 @@ public class LifeCounter : MonoBehaviour
         }
         else
         {
-            return; // TODO: will need a game over screen
+            SceneManager.LoadScene(0);
+            FindObjectOfType<GameProgress>().ResetGameProgress();
+            // TODO: will need a game over screen
         }
     }
 
