@@ -5,7 +5,8 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - coinPickupSound: {fileID: 8300000, guid: 45e283d7ccbab9749af3a0df1b18b5ea, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

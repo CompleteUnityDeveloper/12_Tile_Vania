@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212261692423946694}
   - component: {fileID: 61712734927619562}
   - component: {fileID: 95595084827541698}
-  - component: {fileID: 111847278334697630}
   - component: {fileID: 114058763526557832}
   - component: {fileID: 82398368595887672}
   m_Layer: 0
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1713366988584548}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.47, y: -0.47, z: 0}
+  m_LocalPosition: {x: 6.5403433, y: 4.5149927, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,7 +124,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -137,7 +136,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -149,7 +148,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95595084827541698
 Animator:
   serializedVersion: 3
@@ -167,20 +166,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111847278334697630
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1713366988584548}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e22ee6a113522954fa19362dad126cb3, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &114058763526557832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,7 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b851e0a9b57988948bb16e7b8b2b98eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsForCoinPickup: 125
   coinPickupSound: {fileID: 8300000, guid: 45e283d7ccbab9749af3a0df1b18b5ea, type: 3}
 --- !u!212 &212261692423946694
 SpriteRenderer:
