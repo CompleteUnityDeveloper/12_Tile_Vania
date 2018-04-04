@@ -12,7 +12,7 @@ public class CoinPickup : MonoBehaviour {
             return;
         else
         {
-            ScoreBoard.AddPoints(pointsForCoinPickup);
+            FindObjectOfType<ScoreBoard>().AddPoints(pointsForCoinPickup);
             FindObjectOfType<SFX>().PlayCoinSound();
         }
         Destroy(gameObject);       
