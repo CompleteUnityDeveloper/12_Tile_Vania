@@ -17,12 +17,4 @@ public class WaterDetector : MonoBehaviour {
             Debug.LogWarning("Named water layer not found");
         }
     }
-	
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.name == waterLayerName)
-        {
-            playerMovement.ballsAreWet = true;
-        }
-    }
 }

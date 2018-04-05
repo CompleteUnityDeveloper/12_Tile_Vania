@@ -45,11 +45,11 @@ public class EnemyMovement : MonoBehaviour
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.GetComponent<PlayerMovement>())
-        {
-            playerMovement.collidedWithEnemy = true;
-        }
-    }
+    //void ontriggerenter2d(collider2d other)
+    //{
+    //    if (other.gameobject.getcomponent<playermovement>())
+    //    {
+    //        playermovement.collidedwithenemy = true;
+    //    }
+    //}
 }

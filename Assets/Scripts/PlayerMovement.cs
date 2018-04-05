@@ -7,31 +7,24 @@ using System;
 // Note no longer just does player movement and is getting big
 public class PlayerMovement : MonoBehaviour
 {
-    #region Instance Variables
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
-    [SerializeField] AudioClip[] jumpSounds;
-    [SerializeField] AudioClip deathSound;
-    [SerializeField] float respawnLoadDelay = 1f;
 
+    [SerializeField] AudioClip[] jumpSounds;
+  
     // todo remove all 4 caches
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
      public bool isOnFloor = false;
-    [HideInInspector] public bool ballsAreWet; // todo consider flashing on we legs
-    [HideInInspector] public bool collidedWithEnemy;
-
-    bool isInDeathThrows = false;
+ 
+ //   bool isInDeathThrows = false;
     float gravityScaleAtStart;
     
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     AudioSource myAudioSource;
-    #endregion
-
-    #region Messages
-    // Use this for initialization
+ 
+     // Use this for initialization
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -44,38 +37,18 @@ public class PlayerMovement : MonoBehaviour
     {
         // Called in Update so input processes properly
         // Physics may need to be moved to FixedUpdate()
-        if (isInDeathThrows) { return; }
+ //       if (isInDeathThrows) { return; }
 
         VerticalMovement();
         HorizontalMovement();
-        PlayerDeath();
     }
 
-    private void PlayerDeath()
-    {
-        if (ballsAreWet || collidedWithEnemy)
-        {
-            StartCoroutine(RunDramaticDeathSequence());
-            
-        }
-    }
-
-    private IEnumerator RunDramaticDeathSequence()
-    {
-        isInDeathThrows = true;
-        myRigidBody.freezeRotation = false;
-        myRigidBody.velocity = deathKick;
-        FindObjectOfType<SFX>().PlayDeathSound();
-        yield return new WaitForSecondsRealtime(respawnLoadDelay);
-        FindObjectOfType<LifeCounter>().ProcessTheAfterLife();
-    }
 
     private void LateUpdate() // Use for updating view
     {
         FlipSprite(); // Here so movement has settled
     }
-    #endregion
-            
+             
     private void VerticalMovement()
     {
         if (isNearLadder)
