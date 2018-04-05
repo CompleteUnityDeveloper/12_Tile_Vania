@@ -28,9 +28,7 @@ public class GameProgress : MonoBehaviour
 
     private void Start()
     {
-        livesText = GetComponent<Text>();
         livesText.text = playerLives.ToString();
-        print(playerLives);
     }
 
     public void ProcessTheAfterLife()
