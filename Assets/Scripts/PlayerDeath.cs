@@ -30,6 +30,8 @@ public class PlayerDeath : MonoBehaviour {
     private void KillPlayer()
     {
         isAlive = false;
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<Animator>().SetBool("Dying", true);
 
         StartCoroutine(RunDramaticDeathSequence());
 
@@ -39,8 +41,7 @@ public class PlayerDeath : MonoBehaviour {
 
     private IEnumerator RunDramaticDeathSequence()
     {
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<Animator>().SetBool("Dying", true);
+        
         yield return new WaitForSecondsRealtime(respawnLoadDelay);
         FindObjectOfType<GameProgress>().ProcessTheAfterLife();
         isAlive = true;
