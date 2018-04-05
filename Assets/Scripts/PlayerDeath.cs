@@ -30,6 +30,7 @@ public class PlayerDeath : MonoBehaviour {
     private void KillPlayer()
     {
         isAlive = false;
+        FindObjectOfType<GameProgress>().ProcessTheAfterLife();
         myRigidBody.velocity = deathKick;
         FindObjectOfType<SFX>().PlayDeathSound();
         StartCoroutine(RunDramaticDeathSequence());

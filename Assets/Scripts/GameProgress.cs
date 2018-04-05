@@ -33,11 +33,11 @@ public class GameProgress : MonoBehaviour
         print(playerLives);
     }
 
-
     public void ProcessTheAfterLife()
     {
         if (playerLives > 1)
         {
+            SceneManager.LoadScene(0);
             var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(currentSceneIndex);
             TakeLife();

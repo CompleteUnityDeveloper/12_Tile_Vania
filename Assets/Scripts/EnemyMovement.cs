@@ -44,12 +44,4 @@ public class EnemyMovement : MonoBehaviour
         // Flip sprite
         transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
     }
-
-    //void ontriggerenter2d(collider2d other)
-    //{
-    //    if (other.gameobject.getcomponent<playermovement>())
-    //    {
-    //        playermovement.collidedwithenemy = true;
-    //    }
-    //}
 }
