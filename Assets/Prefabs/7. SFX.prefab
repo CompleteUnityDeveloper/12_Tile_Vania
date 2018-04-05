@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114076462028984102}
   - component: {fileID: 82740591989590500}
   m_Layer: 0
-  m_Name: SFX
+  m_Name: 7. SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

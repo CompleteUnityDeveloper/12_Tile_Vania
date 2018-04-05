@@ -6,7 +6,6 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Wiring
 
     // Config
     [SerializeField] float runSpeed = 5f;
@@ -15,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip[] jumpSounds;
 
     // State
-    // todo remove all 4 caches
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     AudioSource myAudioSource;
+    Collider2D myCollider;
 
+    // todo remove all 4 caches
     public bool isNearLadder = false;  // available to ladder collision component
     public bool isOnFloor = false;
     float gravityScaleAtStart;
@@ -31,24 +31,22 @@ public class PlayerMovement : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
         myAudioSource = GetComponent<AudioSource>();
+        myCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        // Called in Update so input processes properly
-        // Physics may need to be moved to FixedUpdate()
- //       if (isInDeathThrows) { return; }
-
         VerticalMovement();
         HorizontalMovement();
+        var layerMask = LayerMask.GetMask("Ladder"); // could be more than one
+        print(myCollider.IsTouchingLayers(layerMask));
     }
 
-
-    private void LateUpdate() // Use for updating view
+    void LateUpdate() // Use for updating view
     {
         FlipSprite(); // Here so movement has settled
     }
-             
+
     private void VerticalMovement()
     {
         if (isNearLadder)
