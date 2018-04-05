@@ -5898,7 +5898,7 @@ GameObject:
   - component: {fileID: 675467671}
   - component: {fileID: 675467670}
   - component: {fileID: 675467672}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Background layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31676,7 +31676,7 @@ GameObject:
   - component: {fileID: 1203719026}
   - component: {fileID: 1203719025}
   - component: {fileID: 1203719024}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Water layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44993,7 +44993,7 @@ GameObject:
   - component: {fileID: 1297495282}
   - component: {fileID: 1297495281}
   - component: {fileID: 1297495283}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ladder layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48869,7 +48869,7 @@ GameObject:
   - component: {fileID: 1965264983}
   - component: {fileID: 1965264985}
   - component: {fileID: 1965264984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Foreground layer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
