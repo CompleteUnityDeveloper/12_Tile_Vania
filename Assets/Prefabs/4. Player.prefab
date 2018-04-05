@@ -11,39 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1744130822507992}
   m_IsPrefabParent: 1
---- !u!1 &1471255225759460
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4282122108268644}
-  - component: {fileID: 58059363849755186}
-  m_Layer: 12
-  m_Name: Balls
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!1 &1491699844025214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4039797919679182}
-  - component: {fileID: 61127086255086734}
-  - component: {fileID: 114594264871856464}
-  m_Layer: 12
-  m_Name: Feet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1744130822507992
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,9 +25,6 @@ GameObject:
   - component: {fileID: 70356789124614562}
   - component: {fileID: 82728307449353042}
   - component: {fileID: 114790448064063092}
-  - component: {fileID: 114069063150049880}
-  - component: {fileID: 114603844109390620}
-  - component: {fileID: 114385205149978326}
   m_Layer: 12
   m_Name: 4. Player
   m_TagString: Untagged
@@ -68,32 +32,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4039797919679182
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1491699844025214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674220278293530}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4282122108268644
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471255225759460}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674220278293530}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4674220278293530
 Transform:
   m_ObjectHideFlags: 1
@@ -101,11 +39,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1744130822507992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: -3.01, z: 0}
+  m_LocalPosition: {x: -4.93, y: -3.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4039797919679182}
-  - {fileID: 4282122108268644}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,46 +65,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &58059363849755186
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471255225759460}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
-  serializedVersion: 2
-  m_Radius: 0.12
---- !u!61 &61127086255086734
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1491699844025214}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.53}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.38, y: 0.15}
-  m_EdgeRadius: 0
 --- !u!70 &70356789124614562
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -281,56 +177,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114069063150049880
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744130822507992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cd995e63e5ba4f778475eb3b929be5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  climbLayerName: Ladder layer
---- !u!114 &114385205149978326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744130822507992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343819ee425c7f34988977329f30a5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnLoadDelay: 2
-  deathKick: {x: 25, y: 25}
---- !u!114 &114594264871856464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1491699844025214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab744d66da1b4ed2ac65512bbc30aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floorLayerName: Foreground layer
---- !u!114 &114603844109390620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1744130822507992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20387d52c2464b34ba106c9ea73085f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelExitSlowMoFactor: 0.1
-  levelLoadDelay: 2
 --- !u!114 &114790448064063092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,8 +198,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 22b796f1e6ff4ac438be16161a7209d1, type: 3}
   - {fileID: 8300000, guid: 22a9c449af6a3ea49a098bc061b0d986, type: 3}
   - {fileID: 8300000, guid: ef5db1d79d6ac1145abf4f6712e8b3fd, type: 3}
-  isNearLadder: 0
-  isOnFloor: 0
+  respawnLoadDelay: 2
+  deathKick: {x: 25, y: 25}
 --- !u!212 &212816716817732168
 SpriteRenderer:
   m_ObjectHideFlags: 1

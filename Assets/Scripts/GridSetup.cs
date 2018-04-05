@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// todo finish
 public class GridSetup : MonoBehaviour
 {
     // Use this for initialization

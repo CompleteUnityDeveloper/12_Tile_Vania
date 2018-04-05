@@ -8,12 +8,12 @@ public class EnemyMovement : MonoBehaviour
 
     float moveSpeed;
     Rigidbody2D myRigidBody;
-    PlayerMovement playerMovement;
+    Player playerMovement;
 
     private void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerMovement = FindObjectOfType<Player>();
         moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
     }
     

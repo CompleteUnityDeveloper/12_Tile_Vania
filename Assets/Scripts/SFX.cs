@@ -9,6 +9,7 @@ public class SFX : MonoBehaviour {
 
     [SerializeField] AudioClip coinPickupSound;
     [SerializeField] AudioClip playerDeathSound;
+    // todo consider adding player SFX here too
 
     AudioSource myAudioSource;
 

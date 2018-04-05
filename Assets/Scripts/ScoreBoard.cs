@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ScoreBoard : MonoBehaviour {
 
     int score; 
-
     Text scoreBoardText;
 
     void Start()

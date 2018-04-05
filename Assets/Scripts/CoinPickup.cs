@@ -10,7 +10,7 @@ public class CoinPickup : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        if (!other.GetComponent<PlayerMovement>()) { return; }
+        if (!other.GetComponent<Player>()) { return; }
 
         FindObjectOfType<ScoreBoard>().AddPoints(pointsForCoinPickup);
         FindObjectOfType<SFX>().PlayCoinSound();

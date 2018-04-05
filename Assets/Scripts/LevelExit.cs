@@ -10,7 +10,7 @@ public class LevelExit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "LevelExit")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             StartCoroutine(LoadNextLevel());
         }

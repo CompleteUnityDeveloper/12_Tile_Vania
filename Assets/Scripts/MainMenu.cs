@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour {
     public void StartFirstLevel()
     {
         SceneManager.LoadScene(1);
+        // todo instantiate Game Session
     }
 
     public void QuitGame()

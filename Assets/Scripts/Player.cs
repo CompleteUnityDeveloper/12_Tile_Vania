@@ -4,7 +4,7 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 using System;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     // Config
     [Header("How To Live")]
@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     // State
-    float gravityScaleAtStart;
     bool isAlive = true;
 
     // Cached component references
@@ -31,24 +30,18 @@ public class PlayerMovement : MonoBehaviour
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        gravityScaleAtStart = myRigidBody.gravityScale; // can't change value at runtime because placed in Start
         myAudioSource = GetComponent<AudioSource>();
         myCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        if (isAlive)
-        {
-            Run();
-            Jump();
-            ClimbLadder();
-            Die();
-        }
-        else
-        {
-            // wait for the afterlife
-        }
+        if (!isAlive) { return;  }
+
+        Run();
+        Jump();
+        ClimbLadder();
+        Die();
     }
 
     void LateUpdate() // Use for updating view
@@ -58,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     
     private void ClimbLadder()
     {
-        if (!IsTouchingLayer(new string[]{"Ladder"})) { return; }
+        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
 
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);
@@ -70,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        if (!IsTouchingLayer(new string[]{"Ground"})) { return; }
+        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
@@ -80,13 +73,6 @@ public class PlayerMovement : MonoBehaviour
             myAudioSource.PlayOneShot(clip);
         }
         myAnimator.SetBool("Climbing", false);
-    }
-
-    bool IsTouchingLayer(string[] layers)
-    {
-        var layerMask = LayerMask.GetMask(layers);
-        bool isNearLayers = myCollider.IsTouchingLayers(layerMask);
-        return isNearLayers;
     }
         
     private void Run()
@@ -101,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if (!IsTouchingLayer(new string[] { "Enemy", "Water" }))
+        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Water", "Enemy")))
         { 
             return;
         }
@@ -114,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RunDramaticDeathSequence()
     {
         isAlive = false;
-        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<Player>().enabled = false;
         GetComponent<Animator>().SetBool("Dying", true);
         GetComponent<Rigidbody2D>().velocity = deathKick;
         FindObjectOfType<SFX>().PlayDeathSound();
