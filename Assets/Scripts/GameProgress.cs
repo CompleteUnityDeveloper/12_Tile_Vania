@@ -13,23 +13,24 @@ public class GameProgress : MonoBehaviour
 
     // singleton - ensures that this gameObject and all children are not destroyed
     // until game is reset
-    void Awake()
-    {
-        int numGameProgresses = FindObjectsOfType<GameProgress>().Length;
-        if (numGameProgresses > 1)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    //void Awake()
+    //{
+    //    int numGameProgresses = FindObjectsOfType<GameProgress>().Length;
+    //    if (numGameProgresses > 1)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //}
 
     private void Start()
     {
         livesText = GetComponent<Text>();
         livesText.text = playerLives.ToString();
+        print(playerLives);
     }
 
 
