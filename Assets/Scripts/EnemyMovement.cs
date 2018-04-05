@@ -8,21 +8,14 @@ public class EnemyMovement : MonoBehaviour
 
     float moveSpeed;
     Rigidbody2D myRigidBody;
-    Player playerMovement;
 
     private void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        playerMovement = FindObjectOfType<Player>();
         moveSpeed = Random.Range(slowestSpeed, fastestSpeed);
     }
     
     void Update ()
-    {
-        MoveHorizontally();        
-    }
-
-    void MoveHorizontally()
     {
         if (IsFacingLeft())
         {
@@ -31,8 +24,8 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             myRigidBody.velocity = new Vector2(-moveSpeed, 0f);
-        }
-    } 
+        }       
+    }
 
     bool IsFacingLeft()
     {
