@@ -7,7 +7,12 @@ public class PlayerDeath : MonoBehaviour {
     [SerializeField] float respawnLoadDelay = 2f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
-    bool isAlive = true;
+    [SerializeField] LevelExit levelexit;
+
+    [Header("Required Wiring")]
+    [SerializeField] GameSession gameSession;
+
+    public bool isAlive = true; // TODO Make private
 
     Rigidbody2D myRigidBody;
 
@@ -20,6 +25,7 @@ public class PlayerDeath : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        print(other.name);
         if (!isAlive) { return; }
 
         if (other.gameObject.GetComponent<VerticalScroll>() ||
@@ -34,11 +40,12 @@ public class PlayerDeath : MonoBehaviour {
         isAlive = false;
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<Animator>().SetBool("Dying", true);
-
-        yield return new WaitForSecondsRealtime(respawnLoadDelay);
-        FindObjectOfType<GameProgress>().ProcessTheAfterLife();
         myRigidBody.velocity = deathKick;
         FindObjectOfType<SFX>().PlayDeathSound();
+
+        yield return new WaitForSecondsRealtime(respawnLoadDelay);
+        gameSession.ProcessPlayerDeath();
+
     }
 
 

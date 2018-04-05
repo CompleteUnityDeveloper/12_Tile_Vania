@@ -4,27 +4,27 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 using System;
 
-// Note no longer just does player movement and is getting big
 public class PlayerMovement : MonoBehaviour
 {
+    // Wiring
+
+    // Config
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
-
     [SerializeField] AudioClip[] jumpSounds;
-  
+
+    // State
     // todo remove all 4 caches
-    [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
-     public bool isOnFloor = false;
- 
- //   bool isInDeathThrows = false;
-    float gravityScaleAtStart;
-    
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     AudioSource myAudioSource;
- 
-     // Use this for initialization
+
+    public bool isNearLadder = false;  // available to ladder collision component
+    public bool isOnFloor = false;
+    float gravityScaleAtStart;
+
+    // Messages then public methods
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();

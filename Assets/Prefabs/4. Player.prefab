@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1491699844025214
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +305,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnLoadDelay: 2
+  deathKick: {x: 25, y: 25}
+  gameSession: {fileID: 114456304532302694, guid: 60b6520fd5ff6df44b4649cb83891bcd,
+    type: 2}
+  isAlive: 1
 --- !u!114 &114594264871856464
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameProgress : MonoBehaviour
+public class GameSession : MonoBehaviour
 {
     [SerializeField] int playerLives = 3;
     [SerializeField] Text livesText;
@@ -15,7 +15,7 @@ public class GameProgress : MonoBehaviour
     // until game is reset
     void Awake()
     {
-        int numGameProgresses = FindObjectsOfType<GameProgress>().Length;
+        int numGameProgresses = FindObjectsOfType<GameSession>().Length;
         if (numGameProgresses > 1)
         {
             Destroy(gameObject);
@@ -31,13 +31,15 @@ public class GameProgress : MonoBehaviour
         livesText.text = playerLives.ToString();
     }
 
-    public void ProcessTheAfterLife()
+    public void ResetGameProgress()
+    {
+        Destroy(gameObject);
+    }
+
+    public void ProcessPlayerDeath()
     {
         if (playerLives > 1)
         {
-            SceneManager.LoadScene(0);
-            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
             TakeLife();
         }
         else
@@ -48,14 +50,12 @@ public class GameProgress : MonoBehaviour
         }
     }
 
-    public void TakeLife()
+    void TakeLife()
     {
+        SceneManager.LoadScene(0);
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
         playerLives--;
         livesText.text = playerLives.ToString();
-    }
-
-    public void ResetGameProgress()
-    {
-        Destroy(gameObject);
     }
 }
