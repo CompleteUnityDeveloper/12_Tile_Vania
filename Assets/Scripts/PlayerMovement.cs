@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
     [SerializeField] AudioClip[] jumpSounds;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] float respawnLoadDelay = 1f;
 
     // todo remove all 4 caches
     [HideInInspector] public bool isNearLadder = false;  // available to ladder collision component
@@ -55,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         if (ballsAreWet || collidedWithEnemy)
         {
             StartCoroutine(RunDramaticDeathSequence());
-            FindObjectOfType<LifeCounter>().ProcessTheAfterLife();
+            
         }
     }
 
@@ -64,9 +65,9 @@ public class PlayerMovement : MonoBehaviour
         isInDeathThrows = true;
         myRigidBody.freezeRotation = false;
         myRigidBody.velocity = deathKick;
-        myAudioSource.PlayOneShot(deathSound);
-
-        yield return null;
+        FindObjectOfType<SFX>().PlayDeathSound();
+        yield return new WaitForSecondsRealtime(respawnLoadDelay);
+        FindObjectOfType<LifeCounter>().ProcessTheAfterLife();
     }
 
     private void LateUpdate() // Use for updating view

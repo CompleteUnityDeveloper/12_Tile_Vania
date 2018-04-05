@@ -7,14 +7,13 @@ using UnityEngine;
 public class CoinPickup : MonoBehaviour
 {
     [SerializeField] int pointsForCoinPickup = 100;
-    [SerializeField] AudioClip coinPickupSound;
 
     void OnTriggerEnter2D (Collider2D other)
     {
         if (!other.GetComponent<PlayerMovement>()) { return; }
 
         FindObjectOfType<ScoreBoard>().AddPoints(pointsForCoinPickup);
-        GetComponent<AudioSource>().PlayOneShot(coinPickupSound);
+        FindObjectOfType<SFX>().PlayCoinSound();
         Destroy(gameObject);       
     }
 }

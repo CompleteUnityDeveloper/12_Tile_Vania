@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class SFX : MonoBehaviour {
 
+    // Allows sound effects to be triggered seperate to the object they relate to. 
+    // Useful if the gameObject is being destroyed.
+
     [SerializeField] AudioClip coinPickupSound;
+    [SerializeField] AudioClip playerDeathSound;
+
     AudioSource myAudioSource;
 
     void Start()
@@ -16,4 +21,10 @@ public class SFX : MonoBehaviour {
     {
         myAudioSource.PlayOneShot(coinPickupSound);
     }
+
+    public void PlayDeathSound()
+    {
+        myAudioSource.PlayOneShot(playerDeathSound);
+    }
+
 }
