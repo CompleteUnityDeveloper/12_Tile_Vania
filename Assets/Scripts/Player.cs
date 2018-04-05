@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
         FlipSprite(); // Here so movement has settled
     }
     
+    // while climbing ladder, stop player sliding down
     private void ClimbLadder()
     {
         if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
@@ -82,16 +83,12 @@ public class Player : MonoBehaviour
         myRigidBody.velocity = playerVelocity;
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
-        myAnimator.SetBool("Running", playerHasHorizontalSpeed);  
-     }
+        myAnimator.SetBool("Running", playerHasHorizontalSpeed);
+    }
 
     void Die()
     {
-        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Water", "Enemy")))
-        { 
-            return;
-        }
-        else
+        if (myCollider.IsTouchingLayers(LayerMask.GetMask("Water", "Enemy")))
         {
             StartCoroutine(RunDramaticDeathSequence());
         }
@@ -101,7 +98,7 @@ public class Player : MonoBehaviour
     {
         isAlive = false;
         GetComponent<Player>().enabled = false;
-        GetComponent<Animator>().SetBool("Dying", true);
+        myAnimator.SetTrigger("Die");
         GetComponent<Rigidbody2D>().velocity = deathKick;
         FindObjectOfType<SFX>().PlayDeathSound();
         yield return new WaitForSeconds(respawnLoadDelay);
