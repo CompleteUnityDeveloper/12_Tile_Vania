@@ -30,23 +30,19 @@ public class PlayerDeath : MonoBehaviour {
     private void KillPlayer()
     {
         isAlive = false;
-        FindObjectOfType<GameProgress>().ProcessTheAfterLife();
-        myRigidBody.velocity = deathKick;
-        FindObjectOfType<SFX>().PlayDeathSound();
-        StartCoroutine(RunDramaticDeathSequence());
-        //reduce lives etc
-        //stop playing being able to control movement
 
+        StartCoroutine(RunDramaticDeathSequence());
+
+        myRigidBody.velocity = deathKick;
+        FindObjectOfType<SFX>().PlayDeathSound();     
     }
 
     private IEnumerator RunDramaticDeathSequence()
     {
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<Animator>().SetBool("Dying", true);
-        //myRigidBody.freezeRotation = true;
-        //myRigidBody.velocity = deathKick;
-
         yield return new WaitForSecondsRealtime(respawnLoadDelay);
+        FindObjectOfType<GameProgress>().ProcessTheAfterLife();
         isAlive = true;
     }
 
