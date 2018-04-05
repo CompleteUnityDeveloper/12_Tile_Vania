@@ -10,7 +10,7 @@ public class LevelExit : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Level Exit")
+        if (other.gameObject.tag == "LevelExit")
         {
             StartCoroutine(LoadNextLevel());
         }

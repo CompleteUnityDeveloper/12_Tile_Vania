@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114276040345041496}
   m_Layer: 0
   m_Name: 6. Level Exit
-  m_TagString: Level Exit
+  m_TagString: LevelExit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
