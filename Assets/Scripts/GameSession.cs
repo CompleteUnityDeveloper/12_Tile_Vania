@@ -26,14 +26,9 @@ public class GameSession : MonoBehaviour
         }
     }
 
-    private void Start()
+    void Start()
     {
         livesText.text = playerLives.ToString();
-    }
-
-    public void ResetGameProgress()
-    {
-        Destroy(gameObject);
     }
 
     public void ProcessPlayerDeath()
@@ -44,18 +39,21 @@ public class GameSession : MonoBehaviour
         }
         else
         {
-            // TODO: will need a game over screen
-            SceneManager.LoadScene(0);
             ResetGameProgress();
         }
     }
 
     void TakeLife()
     {
-        SceneManager.LoadScene(0);
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
         playerLives--;
         livesText.text = playerLives.ToString();
+    }
+
+    void ResetGameProgress()
+    {
+        SceneManager.LoadScene(0);
+        Destroy(gameObject); // todo actually instantiate the GameSession somewhere
     }
 }
