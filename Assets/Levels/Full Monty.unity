@@ -278,11 +278,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114790448064063092, guid: 777c0ace120f340e89f8e59f207c86e4,
-        type: 2}
-      propertyPath: respawnLoadDelay
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 777c0ace120f340e89f8e59f207c86e4, type: 2}
   m_IsPrefabParent: 0
@@ -997,6 +992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc85d63ecf3afd44b65a45c51c2da64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLives: 3
+  livesText: {fileID: 950848325}
 --- !u!4 &253974920
 Transform:
   m_ObjectHideFlags: 0
@@ -26169,7 +26166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047e521d8acdc524ab4530c072d2a48f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesText: {fileID: 950848325}
 --- !u!4 &981150548 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4039509059448848, guid: da4e3148a39dce045a8bf763a9b31dd4,
@@ -41684,23 +41680,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4524245232128836, guid: eb9f328a8635a4b4487ee27b06811988,
     type: 2}
   m_PrefabInternal: {fileID: 1671896772}
---- !u!1 &1708768671 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1744130822507992, guid: 777c0ace120f340e89f8e59f207c86e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 13147277}
---- !u!114 &1708768672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1708768671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 343819ee425c7f34988977329f30a5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnLoadDelay: 2
 --- !u!1001 &1732285187
 Prefab:
   m_ObjectHideFlags: 0

@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour {
 
     [SerializeField] float respawnLoadDelay = 2f;
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
+
+    bool IsAlive;
 
     Rigidbody2D myRigidBody;
 
@@ -21,7 +24,8 @@ public class PlayerDeath : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<VerticalScroll>() ||
+        if (IsAlive &&
+            other.gameObject.GetComponent<VerticalScroll>() ||
             other.gameObject.GetComponent<EnemyMovement>())
         {
             KillPlayer();
@@ -30,6 +34,8 @@ public class PlayerDeath : MonoBehaviour {
 
     private void KillPlayer()
     {
+        IsAlive = false;
+        myRigidBody.velocity = deathKick;
         FindObjectOfType<SFX>().PlayDeathSound();
         StartCoroutine(RunDramaticDeathSequence());
         //reduce lives etc
@@ -45,7 +51,9 @@ public class PlayerDeath : MonoBehaviour {
         //myRigidBody.velocity = deathKick;
 
         yield return new WaitForSecondsRealtime(respawnLoadDelay);
-        FindObjectOfType<LifeCounter>().ProcessTheAfterLife();
+        IsAlive = true;
     }
+
+
 
 }

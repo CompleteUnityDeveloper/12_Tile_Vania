@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4282122108268644}
-  - component: {fileID: 114207196803955968}
   - component: {fileID: 58059363849755186}
   m_Layer: 0
   m_Name: Balls
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 114790448064063092}
   - component: {fileID: 114069063150049880}
   - component: {fileID: 114603844109390620}
+  - component: {fileID: 114385205149978326}
   m_Layer: 0
   m_Name: 4. Player
   m_TagString: Untagged
@@ -293,18 +293,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   climbLayerName: Ladder layer
---- !u!114 &114207196803955968
+--- !u!114 &114385205149978326
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471255225759460}
+  m_GameObject: {fileID: 1744130822507992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0f83f95ba9fe4891acc1489687b13bf, type: 3}
+  m_Script: {fileID: 11500000, guid: 343819ee425c7f34988977329f30a5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterLayerName: Water layer
+  respawnLoadDelay: 2
 --- !u!114 &114594264871856464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -344,7 +344,6 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 25
   climbSpeed: 5
-  deathKick: {x: 25, y: 25}
   jumpSounds:
   - {fileID: 8300000, guid: f3bc01c55b318d44e94f7c5d35d60c3e, type: 3}
   - {fileID: 8300000, guid: 088fd1d2640c4ea4d90c209fab239cb5, type: 3}
@@ -352,11 +351,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 22b796f1e6ff4ac438be16161a7209d1, type: 3}
   - {fileID: 8300000, guid: 22a9c449af6a3ea49a098bc061b0d986, type: 3}
   - {fileID: 8300000, guid: ef5db1d79d6ac1145abf4f6712e8b3fd, type: 3}
-  deathSound: {fileID: 8300000, guid: 48261f7a46a6b1d469bbbc6c38fe4a25, type: 3}
   isNearLadder: 0
   isOnFloor: 0
-  ballsAreWet: 0
-  collidedWithEnemy: 0
 --- !u!212 &212816716817732168
 SpriteRenderer:
   m_ObjectHideFlags: 1
