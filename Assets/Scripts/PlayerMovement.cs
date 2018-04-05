@@ -6,23 +6,25 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     // Config
+    [Header("How To Live")]
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] AudioClip[] jumpSounds;
+    [Header("How To Die")]
+    [SerializeField] float respawnLoadDelay = 2f; // todo move elsewhere
+    [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
     // State
+    float gravityScaleAtStart;
+    bool isAlive = true;
+
+    // Cached component references
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     AudioSource myAudioSource;
     Collider2D myCollider;
-
-    // todo remove all 4 caches
-    public bool isNearLadder = false;  // available to ladder collision component
-    public bool isOnFloor = false;
-    float gravityScaleAtStart;
 
     // Messages then public methods
     void Start()
@@ -36,43 +38,39 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        VerticalMovement();
-        HorizontalMovement();
-        var layerMask = LayerMask.GetMask("Ladder"); // could be more than one
-        print(myCollider.IsTouchingLayers(layerMask));
+        if (isAlive)
+        {
+            Run();
+            Jump();
+            ClimbLadder();
+            Die();
+        }
+        else
+        {
+            // wait for the afterlife
+        }
     }
 
     void LateUpdate() // Use for updating view
     {
         FlipSprite(); // Here so movement has settled
     }
-
-    private void VerticalMovement()
-    {
-        if (isNearLadder)
-        {
-            ClimbLadder();
-        }
-        else
-        {
-            Jump();
-        }
-    }
     
     private void ClimbLadder()
     {
+        if (!IsTouchingLayer(new string[]{"Ladder"})) { return; }
+
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);  
+        Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);
         myRigidBody.velocity = climbVelocity;
 
-        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon; 
+        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
         myAnimator.SetBool("Climbing", playerHasVerticalSpeed);
     }
 
-    private void Jump()
+    void Jump()
     {
-
-        if (!isOnFloor) { return; }
+        if (!IsTouchingLayer(new string[]{"Ground"})) { return; }
 
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
@@ -83,8 +81,15 @@ public class PlayerMovement : MonoBehaviour
         }
         myAnimator.SetBool("Climbing", false);
     }
+
+    bool IsTouchingLayer(string[] layers)
+    {
+        var layerMask = LayerMask.GetMask(layers);
+        bool isNearLayers = myCollider.IsTouchingLayers(layerMask);
+        return isNearLayers;
+    }
         
-    private void HorizontalMovement()
+    private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal"); // value between -1 and +1
         Vector2 playerVelocity = new Vector2(controlThrow * runSpeed, myRigidBody.velocity.y);
@@ -94,7 +99,30 @@ public class PlayerMovement : MonoBehaviour
         myAnimator.SetBool("Running", playerHasHorizontalSpeed);  
      }
 
-    private void FlipSprite()
+    void Die()
+    {
+        if (!IsTouchingLayer(new string[] { "Enemy", "Water" }))
+        { 
+            return;
+        }
+        else
+        {
+            StartCoroutine(RunDramaticDeathSequence());
+        }
+    }
+
+    IEnumerator RunDramaticDeathSequence()
+    {
+        isAlive = false;
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<Animator>().SetBool("Dying", true);
+        GetComponent<Rigidbody2D>().velocity = deathKick;
+        FindObjectOfType<SFX>().PlayDeathSound();
+        yield return new WaitForSeconds(respawnLoadDelay);
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
+    }
+
+    void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
