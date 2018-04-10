@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Jumping.unity
     guid: 93b87f297042e47eeaf70ef3ec1dc623
-  - enabled: 1
+  - enabled: 0
     path: Assets/Levels/Ladders.unity
     guid: 724f036afd23b014eb1670fbbfe693c4
   - enabled: 1
