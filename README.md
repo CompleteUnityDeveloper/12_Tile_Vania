@@ -38,3 +38,15 @@ Explain to a fellow student roughly what we're building, and why this is awesome
 **After watching (learning outcomes)…**
 
 Explain to a fellow student the design of what we'll be building and to start exploring options for creativity.
+
+
+### 3 Slicing Sprite Sheets ###
+
+**In this video (objectives)…**
+
+1. Import sprite sheets to be used for our platformer.
+2. Use the automatic or slice-by-grid options in Unity to slice our sprite sheet into individual sprite images for our game.
+
+**After watching (learning outcomes)…**
+
+Be capable of slicing sprite sheets to make individual assets.
