@@ -63,3 +63,16 @@ Be capable of slicing sprite sheets to make individual assets.
 **After watching (learning outcomes)…**
 
 Able to import a sprite sheet, slice it up, create tile palettes and paint a simple level layout.
+
+
+### 5 Unity Rule Tiles ###
+
+**In this video (objectives)…**
+
+1. Download the Unity 2D asset.
+2. Create rule tile rules.
+3. Paint additional platforms using rule tile.
+
+**After watching (learning outcomes)…**
+
+Create a rule tile and set up the logic for its rules.
