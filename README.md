@@ -76,3 +76,16 @@ Able to import a sprite sheet, slice it up, create tile palettes and paint a sim
 **After watching (learning outcomes)…**
 
 Create a rule tile and set up the logic for its rules.
+
+
+### 6 Create Player Idle Animation ###
+
+**In this video (objectives)…**
+
+1. Create player idle animation clip from sprite sheet.
+2. Add animation to Animator Controller.
+3. Add Sprite Renderer and Animator to Player character.
+
+**After watching (learning outcomes)…**
+
+Created 4 frames of 2d character idle animation which plays automatically when the game plays.
