@@ -103,3 +103,15 @@ Created 4 frames of 2d character idle animation which plays automatically when t
 **After watching (learning outcomes)…**
 
 Able to construct an animation state machine with transitions and triggers.
+
+
+### 8 Implement 2D Collision ###
+
+**In this video (objectives)…**
+
+1. Add RigidBody and collision to the player.
+2. Set up composite collision on our environment.
+
+**After watching (learning outcomes)…**
+
+Drop our player from a height and have it land on the platform.
