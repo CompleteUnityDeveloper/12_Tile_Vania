@@ -140,3 +140,16 @@ Understand how to get even more value from this course in terms of your learning
 **After watching (learning outcomes)…**
 
 Move the player horizontally using CrossPlatformInput.
+
+
+### 11 Flip Character Sprite ###
+
+**In this video (objectives)…**
+
+1. Introduce Mathf.Abs and Mathf.Sign.
+2. Pseudocode for flipping character sprite.
+3. Flip character sprite based upon player having horizontal velocity.
+
+**After watching (learning outcomes)…**
+
+Flip the player character's sprite whenever the character has horizontal velocity.
