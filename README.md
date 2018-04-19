@@ -115,3 +115,15 @@ Able to construct an animation state machine with transitions and triggers.
 **After watching (learning outcomes)…**
 
 Drop our player from a height and have it land on the platform.
+
+
+### 9 Maximize Learning Value ###
+
+**In this video (objectives)…**
+
+1. Context for the gameplay functionality we are about to create.
+2. The best way to learn and become better at being a programmer.
+
+**After watching (learning outcomes)…**
+
+Understand how to get even more value from this course in terms of your learning and skills.
