@@ -127,3 +127,16 @@ Drop our player from a height and have it land on the platform.
 **After watching (learning outcomes)…**
 
 Understand how to get even more value from this course in terms of your learning and skills.
+
+
+### 10 Move Player Horizontally ###
+
+**In this video (objectives)…**
+
+1. Create Player class.
+2. Import CrossPlatformInput.
+3. Move the player's RigidBody horizontally.
+
+**After watching (learning outcomes)…**
+
+Move the player horizontally using CrossPlatformInput.
