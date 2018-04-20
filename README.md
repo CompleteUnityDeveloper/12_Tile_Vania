@@ -153,3 +153,15 @@ Move the player horizontally using CrossPlatformInput.
 **After watching (learning outcomes)…**
 
 Flip the player character's sprite whenever the character has horizontal velocity.
+
+
+### 12 Animation State In Code ###
+
+**In this video (objectives)…**
+
+1. Use code to set the animation transition bool.
+2. Make the player transition to the running animation when the running transition condition is called in our script.
+
+**After watching (learning outcomes)…**
+
+Make the player's run animation state be triggered from code.
