@@ -165,3 +165,16 @@ Flip the player character's sprite whenever the character has horizontal velocit
 **After watching (learning outcomes)…**
 
 Make the player's run animation state be triggered from code.
+
+
+### 13 Jumpy Jumpy ###
+
+**In this video (objectives)…**
+
+1. Revise how velocity is being applied to our player's RigidBody.
+2. Add a positive y velocity to cause the player to jump.
+3. Tune the global gravity and player jump speed to give the right feel for our game.
+
+**After watching (learning outcomes)…**
+
+Make your player jump and fall in a way which feels good to play.
