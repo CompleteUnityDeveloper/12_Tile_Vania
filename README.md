@@ -178,3 +178,16 @@ Make the player's run animation state be triggered from code.
 **After watching (learning outcomes)…**
 
 Make your player jump and fall in a way which feels good to play.
+
+
+### 14 Jump if IsTouchingLayers ###
+
+**In this video (objectives)…**
+
+1. Review how layers work as a way to apply the same functionality to many GameObjects.
+2. Implement IsTouchingLayers for our collision check.
+3. Only allow the player to jump if he is touching the ground.
+
+**After watching (learning outcomes)…**
+
+Make the player jump only when touching the ground layer.
