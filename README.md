@@ -205,3 +205,15 @@ Make the player jump only when touching the ground layer.
 **After watching (learning outcomes)…**
 
 Move the player up and down on a ladder with appropriate climbing animation state.
+
+
+### 16 Climb Ladder Tweaks ###
+
+**In this video (objectives)…**
+
+1. Fix bug where player does not transition out of climb state.
+2. Change gravity while on ladder to stop player sliding back down.
+
+**After watching (learning outcomes)…**
+
+Able to stop player sliding on ladder.
