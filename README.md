@@ -191,3 +191,17 @@ Make your player jump and fall in a way which feels good to play.
 **After watching (learning outcomes)…**
 
 Make the player jump only when touching the ground layer.
+
+
+### 15 Climb Ladder ###
+
+**In this video (objectives)…**
+
+1. Create ladder tile.
+2. Set up the climb tilemap, sorting layer and collision layer.
+3. Transition to climb state if player is touching ladder.
+4. Move player's y velocity when input is received.
+
+**After watching (learning outcomes)…**
+
+Move the player up and down on a ladder with appropriate climbing animation state.
