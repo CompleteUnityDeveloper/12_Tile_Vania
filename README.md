@@ -155,6 +155,19 @@ Move the player horizontally using CrossPlatformInput.
 Flip the player character's sprite whenever the character has horizontal velocity.
 
 
+### 11b Instructor Hangout 6.1 ###
+
+**In this video (objectives)…**
+
+1. We discuss the difference between caching and calculating.
+2. Why did we set up the flip sprite the way we did rather than starting with an isFacingRight bool.
+3. Ben makes a bad joke at the end of the video.
+
+**After watching (learning outcomes)…**
+
+Greater understanding of the cache versus calculate options we have.
+
+
 ### 12 Animation State In Code ###
 
 **In this video (objectives)…**
