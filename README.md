@@ -255,3 +255,16 @@ Understand the differences in perspective and orthographic cameras.
 **After watching (learning outcomes)…**
 
 Be skilled at setting up a 2D follow camera using Unity's Cinemachine.
+
+
+### 19 Cinemachine Confiner Extension ###
+
+**In this video (objectives)…**
+
+1. Create physics layers for Player and Background and alter the collision matrix so that the correct things can collide with one another.
+2. Create a bounding box for the Cinemachine confiner.
+3. Tune level and camera so that the player can only see what we want them to see.
+
+**After watching (learning outcomes)…**
+
+Implement the Cinemachine confiner extension.
