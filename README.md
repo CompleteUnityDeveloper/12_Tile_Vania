@@ -242,3 +242,16 @@ Able to stop player sliding on ladder.
 **After watching (learning outcomes)…**
 
 Understand the differences in perspective and orthographic cameras.
+
+
+### 18 Cinemachine Follow Camera ###
+
+**In this video (objectives)…**
+
+1. Import and set up Cinemachine.
+2. Create a Cinemachine brain and Cinemachine virtual camera.
+3. Tune the dead zone, dampening and look ahead of our camera.
+
+**After watching (learning outcomes)…**
+
+Be skilled at setting up a 2D follow camera using Unity's Cinemachine.
