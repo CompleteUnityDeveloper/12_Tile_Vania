@@ -230,3 +230,15 @@ Move the player up and down on a ladder with appropriate climbing animation stat
 **After watching (learning outcomes)…**
 
 Able to stop player sliding on ladder.
+
+
+### 17 Perspective Vs Orthographic Cameras ###
+
+**In this video (objectives)…**
+
+1. Review the fundamental differences between the camera types.
+2. Explain the reasons why we might use one camera over the other.
+
+**After watching (learning outcomes)…**
+
+Understand the differences in perspective and orthographic cameras.
