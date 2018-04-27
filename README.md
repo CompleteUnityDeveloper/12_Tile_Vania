@@ -268,3 +268,17 @@ Be skilled at setting up a 2D follow camera using Unity's Cinemachine.
 **After watching (learning outcomes)…**
 
 Implement the Cinemachine confiner extension.
+
+
+### 20 State-Driven Cameras ###
+
+**In this video (objectives)…**
+
+1. Add a state-driven camera to the scene.
+2. Link the player animator states to the camera states by creating additional cameras.
+3. Adjust the blending between cameras.
+4. Experiment with camera shake.
+
+**After watching (learning outcomes)…**
+
+Implement state-driven cameras using Unity Cinemachine.
