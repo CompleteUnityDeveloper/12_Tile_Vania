@@ -23,15 +23,17 @@ public class Player : MonoBehaviour
     Rigidbody2D myRigidBody;
     Animator myAnimator;
     AudioSource myAudioSource;
-    Collider2D myCollider;
-
+    CapsuleCollider2D myCapsuleCollider;
+    BoxCollider2D myFeet;
+    
     // Messages then public methods
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         myAudioSource = GetComponent<AudioSource>();
-        myCollider = GetComponent<Collider2D>();
+        myCapsuleCollider = GetComponent<CapsuleCollider2D>();
+        myFeet = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -52,7 +54,7 @@ public class Player : MonoBehaviour
     // while climbing ladder, stop player sliding down
     private void ClimbLadder()
     {
-        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
+        if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ladder"))) { return; }
 
         float controlThrow = CrossPlatformInputManager.GetAxis("Vertical");
         Vector2 climbVelocity = new Vector2(myRigidBody.velocity.x, controlThrow * climbSpeed);
@@ -64,7 +66,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (!myCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
+        if (!myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"))) { return; }
 
         if (CrossPlatformInputManager.GetButtonDown("Jump")) // Down so once per press
         {
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        if (myCollider.IsTouchingLayers(LayerMask.GetMask("Water", "Enemy")))
+        if (myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Water", "Enemy")))
         {
             StartCoroutine(RunDramaticDeathSequence());
         }
