@@ -282,3 +282,16 @@ Implement the Cinemachine confiner extension.
 **After watching (learning outcomes)…**
 
 Implement state-driven cameras using Unity Cinemachine.
+
+
+### 21 Prevent Wall Jump ###
+
+**In this video (objectives)…**
+
+1. Add physics material to stop sticking to wall.
+2. Add additional collider to represent player's feet.
+3. Only allow feet to determine if player is touching the ground.
+
+**After watching (learning outcomes)…**
+
+Prevent funky wall behaviour.
