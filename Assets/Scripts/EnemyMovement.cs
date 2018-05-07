@@ -5,10 +5,13 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] float slowestSpeed = 0.5f;
     [SerializeField] float fastestSpeed = 2f;
+    
+    enum SpriteFacing { left, right };
+    [SerializeField] SpriteFacing startFacingDirection;
 
     float moveSpeed;
     Rigidbody2D myRigidBody;
-
+    
     private void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -17,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     
     void Update ()
     {
-        if (IsFacingLeft())
+        if (GetFacingDirection() == SpriteFacing.right) 
         {
             myRigidBody.velocity = new Vector2(moveSpeed, 0f);
         }
@@ -27,9 +30,20 @@ public class EnemyMovement : MonoBehaviour
         }       
     }
 
-    bool IsFacingLeft()
+    SpriteFacing GetFacingDirection()
     {
-        return transform.localScale.x < 0;
+        if (startFacingDirection == SpriteFacing.right && transform.localScale.x > 0)
+        {
+            return SpriteFacing.right;
+        }
+        else if (startFacingDirection == SpriteFacing.left && transform.localScale.x < 0)
+        {
+            return SpriteFacing.right;
+        }
+        else
+        {
+            return SpriteFacing.left;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
