@@ -295,3 +295,15 @@ Implement state-driven cameras using Unity Cinemachine.
 **After watching (learning outcomes)…**
 
 Prevent funky wall behaviour.
+
+
+### 22 Making Enemies ###
+
+**In this video (objectives)…**
+
+1. Import enemy sprite and set up required components.
+2. Script a way for the enemy to flip when it reaches the end of a platform.
+
+**After watching (learning outcomes)…**
+
+Create an enemy that moves along platforms, turning when it reaches the end.
