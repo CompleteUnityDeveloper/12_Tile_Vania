@@ -307,3 +307,17 @@ Prevent funky wall behaviour.
 **After watching (learning outcomes)…**
 
 Create an enemy that moves along platforms, turning when it reaches the end.
+
+
+### 23 Player Death ###
+
+**In this video (objectives)…**
+
+1. Trigger player death when player collides with enemy.
+2. Disable player control when player is in death state.
+3. Implement some kind of dramatic death reaction.
+4. Change player animation state when dying.
+
+**After watching (learning outcomes)…**
+
+Create vulnerability in the player by triggering a dramatic death.
