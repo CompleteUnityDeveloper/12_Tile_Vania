@@ -321,3 +321,16 @@ Create an enemy that moves along platforms, turning when it reaches the end.
 **After watching (learning outcomes)…**
 
 Create vulnerability in the player by triggering a dramatic death.
+
+
+### 24 Adding Hazards ###
+
+**In this video (objectives)…**
+
+1. Import some spikes.
+2. Set up a "Hazards" tilemap.
+3. Build the behaviour of the "Hazards" tilemap so that it harms the player.
+
+**After watching (learning outcomes)…**
+
+Create hazards in your levels which harm the player.
