@@ -334,3 +334,16 @@ Create vulnerability in the player by triggering a dramatic death.
 **After watching (learning outcomes)…**
 
 Create hazards in your levels which harm the player.
+
+
+### 25 Level Flow Layout ###
+
+**In this video (objectives)…**
+
+1. Look at the method of laying out multiple scenes in the hierarchy.
+2. Discuss level flow.
+3. Create our first 3 levels for the player.
+
+**After watching (learning outcomes)…**
+
+Create the flow for the first 3 levels for the game.
