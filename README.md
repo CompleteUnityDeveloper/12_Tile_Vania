@@ -347,3 +347,17 @@ Create hazards in your levels which harm the player.
 **After watching (learning outcomes)…**
 
 Create the flow for the first 3 levels for the game.
+
+
+### 26 Level Exit Portal ###
+
+**In this video (objectives)…**
+
+1. Create a level exit portal sprite.
+2. Create coroutine for loading next level.
+3. Set up build scene indexing.
+4. Load next scene when player enters portal.
+
+**After watching (learning outcomes)…**
+
+Load the next scene when the player enters a portal.
