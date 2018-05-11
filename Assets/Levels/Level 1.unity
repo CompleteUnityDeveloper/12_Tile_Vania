@@ -113,6 +113,47 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &93949732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 93949734}
+  - component: {fileID: 93949733}
+  m_Layer: 10
+  m_Name: GameSession
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &93949733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 93949732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df79e5f7a2838064294db78989ff5202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLives: 3
+--- !u!4 &93949734
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 93949732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198381295
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,11 +510,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4986651865742768, guid: af1ec154e4ef4df469a09f7b2d20b5e6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 43.94
+      value: 22.97
       objectReference: {fileID: 0}
     - target: {fileID: 4986651865742768, guid: af1ec154e4ef4df469a09f7b2d20b5e6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.9
+      value: -3.95
       objectReference: {fileID: 0}
     - target: {fileID: 4986651865742768, guid: af1ec154e4ef4df469a09f7b2d20b5e6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4123,27 +4164,27 @@ Prefab:
     - target: {fileID: 20116003374553108, guid: 726cc15c5c0b3864485c5a28aa9fe65f,
         type: 2}
       propertyPath: orthographic size
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1958590112760752, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1264445822210160, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4890794719571966, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -34.54
+      value: -8.446175
       objectReference: {fileID: 0}
     - target: {fileID: 4890794719571966, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -1.5535548
       objectReference: {fileID: 0}
     - target: {fileID: 4890794719571966, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4890794719571966, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4177,19 +4218,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4494568594345702, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.399998
+      value: -11.570002
       objectReference: {fileID: 0}
     - target: {fileID: 4494568594345702, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4000001
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 4026490980037816, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.399998
+      value: -11.570002
       objectReference: {fileID: 0}
     - target: {fileID: 4026490980037816, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.4000001
+      value: -2.45
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114674659974998588, guid: 726cc15c5c0b3864485c5a28aa9fe65f, type: 2}

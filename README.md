@@ -374,3 +374,17 @@ Load the next scene when the player enters a portal.
 **After watching (learning outcomes)…**
 
 Be able to create start and success screens with corresponding buttons.
+
+
+### 28 Game Session Controller ###
+
+**In this video (objectives)…**
+
+1. Create singleton for Game Session script.
+2. Determine whether player has any lives remaining.
+3. Reload current level or reset game to main menu if player has no lives.
+4. Call the public method that processes the player death within Game Session class.
+
+**After watching (learning outcomes)…**
+
+Elegantly process the player death, loading and reseting of game.
