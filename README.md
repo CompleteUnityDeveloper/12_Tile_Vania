@@ -361,3 +361,16 @@ Create the flow for the first 3 levels for the game.
 **After watching (learning outcomes)…**
 
 Load the next scene when the player enters a portal.
+
+
+### 27 Start & Success Screens ###
+
+**In this video (objectives)…**
+
+1. Add a start game button.
+2. Add a success scene.
+3. Add a replay game button.
+
+**After watching (learning outcomes)…**
+
+Be able to create start and success screens with corresponding buttons.
