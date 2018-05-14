@@ -412,3 +412,17 @@ Start the process of creating a coin pickup which destroys when player touches i
 **After watching (learning outcomes)…**
 
 Trigger a SFX that persists even when the Game Object which triggered it is destroyed.
+
+
+### 31 Persistent Score & Lives ###
+
+**In this video (objectives)…**
+
+1. Create UI text for lives and for score.
+2. Show the lives and score text based upon the starting values.
+3. Update lives and score when player dies or picks up coins.
+4. Apply the singleton pattern to lives and score so that they persist when player dies.
+
+**After watching (learning outcomes)…**
+
+Display and update score and lives on the UI and persist their values when player dies and respawns.
