@@ -388,3 +388,15 @@ Be able to create start and success screens with corresponding buttons.
 **After watching (learning outcomes)…**
 
 Elegantly process the player death, loading and reseting of game.
+
+
+### 29 Coin Pickups ###
+
+**In this video (objectives)…**
+
+1. Import and animate coins.
+2. Create mechanism where the coins are picked up and destroyed.
+
+**After watching (learning outcomes)…**
+
+Start the process of creating a coin pickup which destroys when player touches it.
