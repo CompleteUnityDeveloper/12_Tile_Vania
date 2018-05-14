@@ -400,3 +400,15 @@ Elegantly process the player death, loading and reseting of game.
 **After watching (learning outcomes)…**
 
 Start the process of creating a coin pickup which destroys when player touches it.
+
+
+### 30 Persistent SFX ###
+
+**In this video (objectives)…**
+
+1. Examine the different ways to ensure SFX is not destroyed when game object is destroyed.
+2. Implement PlayClipAtPoint() and reposition so that it is next to the camera.
+
+**After watching (learning outcomes)…**
+
+Trigger a SFX that persists even when the Game Object which triggered it is destroyed.
