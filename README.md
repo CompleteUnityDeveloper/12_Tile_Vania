@@ -426,3 +426,16 @@ Trigger a SFX that persists even when the Game Object which triggered it is dest
 **After watching (learning outcomes)…**
 
 Display and update score and lives on the UI and persist their values when player dies and respawns.
+
+
+### 32 Remembering Pickups ###
+
+**In this video (objectives)…**
+
+1. Create a scene persist script that uses a singleton pattern to not destroy any children objects (such as pickups).
+2. Within our scene persist, check if the current build index differs to starting build index.
+3. Destroy scene persist object if we move on to the next level.
+
+**After watching (learning outcomes)…**
+
+Create a system to allow objects to remember their state within a scene.
