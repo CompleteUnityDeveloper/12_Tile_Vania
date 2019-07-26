@@ -439,3 +439,15 @@ Display and update score and lives on the UI and persist their values when playe
 **After watching (learning outcomes)…**
 
 Create a system to allow objects to remember their state within a scene.
+
+
+### 33 Adding Rising Water ###
+
+**In this video (objectives)…**
+
+1. Create a new water layer with some watery looking water on it.
+2. Create a new script which allows us to scroll the water vertically to create a time hazard.
+
+**After watching (learning outcomes)…**
+
+Create a moving water hazard for the player to avoid.
