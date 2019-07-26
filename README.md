@@ -451,3 +451,15 @@ Create a system to allow objects to remember their state within a scene.
 **After watching (learning outcomes)…**
 
 Create a moving water hazard for the player to avoid.
+
+
+### 34 Over To You Now ###
+
+**In this video (objectives)…**
+
+1. Well done for finishing this section.
+2. There is so much that you can do with this platformer now to make it really exciting to you.
+
+**After watching (learning outcomes)…**
+
+Onwards and upwards!
