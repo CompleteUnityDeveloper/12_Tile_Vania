@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
 
     // Cached component references
     Rigidbody2D myRigidBody;
+    SpriteRenderer mySprite;
     Animator myAnimator;
     CapsuleCollider2D myBodyCollider;
     BoxCollider2D myFeet;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour {
     // Message then methods
     void Start() {
         myRigidBody = GetComponent<Rigidbody2D>();
+        mySprite = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeet = GetComponent<BoxCollider2D>();
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour {
         Run();
         ClimbLadder();
         Jump();
+        HitWall();
         FlipSprite();
         Die();
     }
@@ -50,6 +53,16 @@ public class Player : MonoBehaviour {
 
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("Running", playerHasHorizontalSpeed);
+    }
+
+    private void HitWall()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Wall")))
+        {
+            Debug.Log("Hit wall.");
+            return;
+        }
+
     }
 
     private void ClimbLadder()
@@ -87,10 +100,17 @@ public class Player : MonoBehaviour {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
             isAlive = false;
-            myAnimator.SetTrigger("Dying");
+            StartCoroutine("Dying");
+            // mySprite.enabled = false;
             GetComponent<Rigidbody2D>().velocity = deathKick;
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
+    }
+
+    IEnumerator Dying() {
+        myAnimator.SetTrigger("Dying");
+        yield return new WaitForSeconds(0.6f);
+        isAlive = true;
     }
 
     private void FlipSprite()

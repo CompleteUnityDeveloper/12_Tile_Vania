@@ -53,8 +53,8 @@ public class GameSession : MonoBehaviour {
     private void TakeLife()
     {
         playerLives--;
-        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        // var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        // SceneManager.LoadScene(currentSceneIndex);
         livesText.text = playerLives.ToString();
     }
 
