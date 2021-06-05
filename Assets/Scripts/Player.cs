@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     // Config 
     [SerializeField] float runSpeed = 5f;
@@ -23,7 +24,8 @@ public class Player : MonoBehaviour {
     float gravityScaleAtStart;
 
     // Message then methods
-    void Start() {
+    void Start()
+    {
         myRigidBody = GetComponent<Rigidbody2D>();
         mySprite = GetComponent<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
@@ -43,6 +45,7 @@ public class Player : MonoBehaviour {
         HitWall();
         FlipSprite();
         Die();
+        Sick();
     }
 
     private void Run()
@@ -106,8 +109,25 @@ public class Player : MonoBehaviour {
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
         }
     }
+    private void Sick()
+    {
+        if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("5G")))
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+            StartCoroutine(ExecuteAfterTime(2));
+        }
 
-    IEnumerator Dying() {
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    IEnumerator Dying()
+    {
         myAnimator.SetTrigger("Dying");
         yield return new WaitForSeconds(0.6f);
         isAlive = true;
