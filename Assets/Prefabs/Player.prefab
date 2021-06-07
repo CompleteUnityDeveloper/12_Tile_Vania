@@ -136,7 +136,7 @@ MonoBehaviour:
   runSpeed: 5
   jumpSpeed: 28
   climbSpeed: 5
-  deathKick: {x: 5, y: 5}
+  deathKick: {x: 4, y: 4}
 --- !u!212 &212631365808854658
 SpriteRenderer:
   m_ObjectHideFlags: 1

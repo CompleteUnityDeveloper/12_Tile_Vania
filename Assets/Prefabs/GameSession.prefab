@@ -207,10 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df79e5f7a2838064294db78989ff5202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 3
+  playerLives: 5
   score: 0
   livesText: {fileID: 114260368569343036}
   scoreText: {fileID: 114767110431990346}
+  heartParent: {fileID: 1554961130051612}
+  heartPrefab: {fileID: 114155028633942966, guid: 6db963154c3ff3a4892d26904a5caab1,
+    type: 2}
+  heartSprite: {fileID: 21300000, guid: 8e311b4c6c370dc45bab65810cd4a0cb, type: 3}
 --- !u!222 &222887052531649388
 CanvasRenderer:
   m_ObjectHideFlags: 1

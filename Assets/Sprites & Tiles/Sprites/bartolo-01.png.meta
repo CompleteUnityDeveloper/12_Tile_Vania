@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 667d58187d8bb16448007f7c293c9ab0
-timeCreated: 1615163625
+guid: 937cf6739de9dd64db913b339db00d87
+timeCreated: 1622955115
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: chemtrails-01_0
-    21300002: chemtrails-01_1
-    21300004: chemtrails-01_2
-    21300006: chemtrails-01_3
-    21300008: chemtrails-01_4
-    21300010: chemtrails-01_5
-    21300012: chemtrails-01_6
-    21300014: chemtrails-01_7
-    21300016: chemtrails-01_8
-    21300018: chemtrails-01_9
-    21300020: chemtrails-01_10
-    21300022: chemtrails-01_11
-    21300024: chemtrails-01_12
-    21300026: chemtrails-01_13
-    21300028: chemtrails-01_14
-    21300030: chemtrails-01_15
+    21300000: bartolo-01_0
+    21300002: bartolo-01_1
+    21300004: bartolo-01_2
+    21300006: bartolo-01_3
+    21300008: bartolo-01_4
+    21300010: bartolo-01_5
+    21300012: bartolo-01_6
+    21300014: bartolo-01_7
+    21300016: bartolo-01_8
+    21300018: bartolo-01_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -62,7 +56,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 28
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chemtrails-01_0
+      name: bartolo-01_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 116
-        width: 32
-        height: 32
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,13 +114,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_1
+      name: bartolo-01_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 116
-        width: 32
-        height: 32
+        x: 28
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +128,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_2
+      name: bartolo-01_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 116
-        width: 32
-        height: 32
+        x: 56
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,13 +142,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_3
+      name: bartolo-01_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 116
-        width: 32
-        height: 32
+        x: 84
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,13 +156,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_4
+      name: bartolo-01_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 78
-        width: 32
-        height: 32
+        x: 112
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,13 +170,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_5
+      name: bartolo-01_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 78
-        width: 32
-        height: 32
+        x: 140
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,13 +184,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_6
+      name: bartolo-01_6
       rect:
         serializedVersion: 2
-        x: 76
-        y: 78
-        width: 32
-        height: 32
+        x: 168
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,13 +198,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_7
+      name: bartolo-01_7
       rect:
         serializedVersion: 2
-        x: 114
-        y: 78
-        width: 32
-        height: 32
+        x: 196
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,13 +212,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_8
+      name: bartolo-01_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 32
-        height: 32
+        x: 224
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,97 +226,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: chemtrails-01_9
+      name: bartolo-01_9
       rect:
         serializedVersion: 2
-        x: 38
-        y: 40
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_10
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 40
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_11
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 40
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_13
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_14
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: chemtrails-01_15
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 2
-        width: 32
-        height: 32
+        x: 252
+        y: 6
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

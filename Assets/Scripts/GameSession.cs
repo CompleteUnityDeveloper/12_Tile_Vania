@@ -5,13 +5,32 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameSession : MonoBehaviour {
+public class GameSession : MonoBehaviour
+{
 
     [SerializeField] int playerLives = 3;
     [SerializeField] int score = 0;
 
     [SerializeField] Text livesText;
     [SerializeField] Text scoreText;
+
+    // Setting UI Canvas as the Parent for the hearts
+    [SerializeField] GameObject heartParent;
+
+    // Adding the heart prefab image
+    [SerializeField] Image heartPrefab;
+
+    // Adding the heart sprite
+    [SerializeField] Sprite heartSprite;
+
+    // Creating a list of heart images
+    List<Image> hearts = new List<Image>();
+
+    // x value of heart
+    int heartx = 50;
+
+
+
 
     private void Awake()
     {
@@ -27,12 +46,36 @@ public class GameSession : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
-	}
 
-    public void AddToScore (int pointsToAdd)
+        // Create hearts
+        for (int i = 0; i < playerLives; i++)
+        {
+            // Add a heart image prefab on to the list
+            hearts.Add(heartPrefab);
+
+            // Assign a heart list item to a new object
+            Image heart = Instantiate(hearts[i]);
+
+            // Put the new image object under the heartParant aka UI Canvas
+            heart.rectTransform.SetParent(heartParent.transform, true);
+
+            // Set the position of the new object to the top left
+            heart.rectTransform.anchoredPosition = new Vector2(heartx, -50);
+
+            // Change the heartx value so the next heart is shifted to the right
+            heartx += 40;
+
+        }
+
+        Debug.Log("Hearts: " + hearts.Count);
+
+    }
+
+    public void AddToScore(int pointsToAdd)
     {
         score += pointsToAdd;
         scoreText.text = score.ToString();
@@ -56,6 +99,27 @@ public class GameSession : MonoBehaviour {
         // var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         // SceneManager.LoadScene(currentSceneIndex);
         livesText.text = playerLives.ToString();
+
+        // Remove last item in heart list
+        hearts.RemoveAt(hearts.Count - 1);
+
+        // Remove one of the hearts
+        DestroyWithTag("Heart");
+
+        Debug.Log("Hearts: " + hearts.Count);
+    }
+
+    private void DestroyWithTag(string destroyTag)
+    {
+        // Create a new array
+        GameObject[] destroyObject;
+        
+        // Add all objects with specified tag to array
+        destroyObject = GameObject.FindGameObjectsWithTag(destroyTag);
+        
+        // Remove last heart in array
+        Destroy(destroyObject[hearts.Count]);
+
     }
 
     private void ResetGameSession()

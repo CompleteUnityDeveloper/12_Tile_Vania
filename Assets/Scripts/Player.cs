@@ -114,16 +114,9 @@ public class Player : MonoBehaviour
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("5G")))
         {
             GetComponent<SpriteRenderer>().color = Color.green;
-            StartCoroutine(ExecuteAfterTime(2));
+        } else {
+            GetComponent<SpriteRenderer>().color = Color.white;
         }
-
-    }
-
-    IEnumerator ExecuteAfterTime(float time)
-    {
-        yield return new WaitForSeconds(time);
-
-        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     IEnumerator Dying()

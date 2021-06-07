@@ -1,15 +1,16 @@
 fileFormatVersion: 2
-guid: 025b9e7e78d597c478c885bf5059e122
-timeCreated: 1614854559
+guid: 379558bf146c66c4587f80eacfe7145e
+timeCreated: 1623061939
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: enemy-01_0
-    21300002: enemy-01_1
-    21300004: enemy-01_2
-    21300006: enemy-01_3
-    21300008: enemy-01_4
-    21300010: enemy-01_5
+    21300000: toilet-roll-01_0
+    21300002: toilet-roll-01_1
+    21300004: toilet-roll-01_2
+    21300006: toilet-roll-01_3
+    21300008: toilet-roll-01_4
+    21300010: toilet-roll-01_5
+    21300012: toilet-roll-01_6
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -96,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy-01_0
+      name: toilet-roll-01_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 7
-        width: 32
-        height: 32
+        x: 0
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,13 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy-01_1
+      name: toilet-roll-01_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 7
-        width: 32
-        height: 32
+        x: 38
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,13 +125,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy-01_2
+      name: toilet-roll-01_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 7
-        width: 32
-        height: 32
+        x: 76
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,13 +139,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy-01_3
+      name: toilet-roll-01_3
       rect:
         serializedVersion: 2
-        x: 125
-        y: 8
-        width: 32
-        height: 32
+        x: 114
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,13 +153,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy-01_4
+      name: toilet-roll-01_4
       rect:
         serializedVersion: 2
-        x: 163
-        y: 8
-        width: 32
-        height: 32
+        x: 152
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,13 +167,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: enemy-01_5
+      name: toilet-roll-01_5
       rect:
         serializedVersion: 2
-        x: 201
-        y: 8
-        width: 32
-        height: 32
+        x: 190
+        y: 0
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: toilet-roll-01_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 22
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

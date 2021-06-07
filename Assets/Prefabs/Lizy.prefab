@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114301740731683716}
   - component: {fileID: 61273292334705844}
   m_Layer: 12
-  m_Name: Enemy
+  m_Name: Lizy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
