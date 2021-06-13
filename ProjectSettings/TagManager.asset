@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Heart
+  - Shungite
+  - SpeechBubble
   layers:
   - Default
   - TransparentFX
@@ -24,9 +26,9 @@ TagManager:
   - Wall
   - 5G
   - Heart
-  - 
-  - 
-  - 
+  - Background 2
+  - Foreground
+  - Text
   - 
   - 
   - 
@@ -41,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background 2
+    uniqueID: 1012246921
     locked: 0
   - name: Background
     uniqueID: 2425972467
@@ -57,9 +62,15 @@ TagManager:
   - name: Player
     uniqueID: 125930379
     locked: 0
-  - name: Foreground
+  - name: Ground
     uniqueID: 3744862253
     locked: 0
   - name: Interactables
     uniqueID: 622844951
+    locked: 0
+  - name: Foreground
+    uniqueID: 141519617
+    locked: 0
+  - name: Text
+    uniqueID: 532631299
     locked: 0

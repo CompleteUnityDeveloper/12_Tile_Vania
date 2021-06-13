@@ -8,9 +8,14 @@ public class Player : MonoBehaviour
 
     // Config 
     [SerializeField] float runSpeed = 5f;
+    float initialRunSpeed = 0f;
     [SerializeField] float jumpSpeed = 5f;
+    float initialJumpSpeed = 0f;
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
+
+    [SerializeField] List<Sprite> damageSpeeches = new List<Sprite>();
+
 
     // State
     bool isAlive = true;
@@ -32,6 +37,8 @@ public class Player : MonoBehaviour
         myBodyCollider = GetComponent<CapsuleCollider2D>();
         myFeet = GetComponent<BoxCollider2D>();
         gravityScaleAtStart = myRigidBody.gravityScale;
+
+        getSpeedValues();
     }
 
     // Update is called once per frame
@@ -44,8 +51,14 @@ public class Player : MonoBehaviour
         Jump();
         HitWall();
         FlipSprite();
-        Die();
+        LooseHealth();
         Sick();
+    }
+
+    private void getSpeedValues()
+    {
+        initialRunSpeed = runSpeed;
+        initialJumpSpeed = jumpSpeed;
     }
 
     private void Run()
@@ -98,7 +111,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Die()
+    private void LooseHealth()
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("Enemy", "Hazards")))
         {
@@ -107,15 +120,35 @@ public class Player : MonoBehaviour
             // mySprite.enabled = false;
             GetComponent<Rigidbody2D>().velocity = deathKick;
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
+
+            // Show a random damage Speech Bubble when taking damage
+            DamageSpeechBubble();
         }
+
     }
+
+    private void DamageSpeechBubble()
+    {
+        // Choose a random Damage Speech Bubble
+        Sprite randomSpeech = damageSpeeches[Random.Range(0, damageSpeeches.Count)];
+
+        // Call Speech Bubble method
+        FindObjectOfType<SpeechBubble>().ChangeBubble(randomSpeech);
+    }
+
     private void Sick()
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("5G")))
         {
             GetComponent<SpriteRenderer>().color = Color.green;
-        } else {
+            runSpeed = (initialRunSpeed / 2);
+            jumpSpeed = (initialJumpSpeed / 2);
+        }
+        else
+        {
             GetComponent<SpriteRenderer>().color = Color.white;
+            runSpeed = initialRunSpeed;
+            jumpSpeed = initialJumpSpeed;
         }
     }
 
@@ -133,6 +166,17 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector2(Mathf.Sign(myRigidBody.velocity.x), 1f);
         }
+
+        // Flip speech bubble if player is facing left so text is legible
+        if (transform.localScale.x == -1)
+        {
+            FindObjectOfType<SpeechBubble>().FlipSprite();
+        }
+        else
+        {
+            FindObjectOfType<SpeechBubble>().DefaultSprite();
+        }
+
     }
 
 }

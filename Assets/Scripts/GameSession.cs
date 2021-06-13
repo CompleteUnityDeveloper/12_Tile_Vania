@@ -9,6 +9,8 @@ public class GameSession : MonoBehaviour
 {
 
     [SerializeField] int playerLives = 3;
+
+    int maxLives = 0;
     [SerializeField] int score = 0;
 
     [SerializeField] Text livesText;
@@ -50,6 +52,7 @@ public class GameSession : MonoBehaviour
     {
         livesText.text = playerLives.ToString();
         scoreText.text = score.ToString();
+        maxLives = playerLives;
 
         // Create hearts
         for (int i = 0; i < playerLives; i++)
@@ -79,6 +82,14 @@ public class GameSession : MonoBehaviour
     {
         score += pointsToAdd;
         scoreText.text = score.ToString();
+
+        // Add life when you have enough rolls but no more than what the Max is
+        if (score % 100 == 0 && playerLives < maxLives)
+        {
+            AddLife();
+
+            Debug.Log("Added life");
+        }
     }
 
     public void ProcessPlayerDeath()
@@ -107,16 +118,44 @@ public class GameSession : MonoBehaviour
         DestroyWithTag("Heart");
 
         Debug.Log("Hearts: " + hearts.Count);
+
+        // Change the heartx value so the next heart is shifted to the right
+        heartx -= 40;
+    }
+
+    public void AddLife()
+    {
+        playerLives++;
+        maxLives++;
+
+        livesText.text = playerLives.ToString();
+
+        // Add heart item to list
+        hearts.Add(heartPrefab);
+
+        // Assign a heart list item to a new object
+        Image heart = Instantiate(hearts[hearts.Count - 1]);
+
+        // Put the new image object under the heartParant aka UI Canvas
+        heart.rectTransform.SetParent(heartParent.transform, true);
+
+        // Set the position of the new object to the top left
+        heart.rectTransform.anchoredPosition = new Vector2(heartx, -50);
+
+        // Change the heartx value so the next heart is shifted to the right
+        heartx += 40;
+
+        Debug.Log("Hearts: " + hearts.Count);
     }
 
     private void DestroyWithTag(string destroyTag)
     {
         // Create a new array
         GameObject[] destroyObject;
-        
+
         // Add all objects with specified tag to array
         destroyObject = GameObject.FindGameObjectsWithTag(destroyTag);
-        
+
         // Remove last heart in array
         Destroy(destroyObject[hearts.Count]);
 
