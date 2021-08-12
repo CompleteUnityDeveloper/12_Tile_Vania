@@ -25,7 +25,7 @@ public class SpeechBubble : MonoBehaviour
 
     IEnumerator BubbleNone()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         spriteRenderer.sprite = null;
     }
 

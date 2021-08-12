@@ -112,7 +112,7 @@ TextureImporter:
       name: mountain-01_0
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 96
         width: 32
         height: 32
@@ -126,7 +126,7 @@ TextureImporter:
       name: mountain-01_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 96
         width: 32
         height: 32
@@ -140,7 +140,7 @@ TextureImporter:
       name: mountain-01_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 96
         width: 32
         height: 32
@@ -154,7 +154,7 @@ TextureImporter:
       name: mountain-01_3
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 64
         width: 32
         height: 32
@@ -168,7 +168,7 @@ TextureImporter:
       name: mountain-01_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 64
         width: 32
         height: 32
@@ -182,7 +182,7 @@ TextureImporter:
       name: mountain-01_5
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 64
         width: 32
         height: 32
@@ -196,7 +196,7 @@ TextureImporter:
       name: mountain-01_6
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 64
         width: 32
         height: 32
@@ -210,7 +210,7 @@ TextureImporter:
       name: mountain-01_7
       rect:
         serializedVersion: 2
-        x: 0
+        x: 96
         y: 32
         width: 32
         height: 32
@@ -224,7 +224,7 @@ TextureImporter:
       name: mountain-01_8
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 32
         width: 32
         height: 32
@@ -238,7 +238,7 @@ TextureImporter:
       name: mountain-01_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 32
         width: 32
         height: 32
@@ -252,7 +252,7 @@ TextureImporter:
       name: mountain-01_10
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 32
         width: 32
         height: 32
@@ -266,7 +266,7 @@ TextureImporter:
       name: mountain-01_11
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 32
         width: 32
         height: 32
@@ -280,7 +280,7 @@ TextureImporter:
       name: mountain-01_12
       rect:
         serializedVersion: 2
-        x: 160
+        x: 256
         y: 32
         width: 32
         height: 32
@@ -294,7 +294,7 @@ TextureImporter:
       name: mountain-01_13
       rect:
         serializedVersion: 2
-        x: 0
+        x: 96
         y: 0
         width: 32
         height: 32
@@ -308,7 +308,7 @@ TextureImporter:
       name: mountain-01_14
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
         width: 32
         height: 32
@@ -322,7 +322,7 @@ TextureImporter:
       name: mountain-01_15
       rect:
         serializedVersion: 2
-        x: 64
+        x: 160
         y: 0
         width: 32
         height: 32
@@ -336,7 +336,7 @@ TextureImporter:
       name: mountain-01_16
       rect:
         serializedVersion: 2
-        x: 96
+        x: 192
         y: 0
         width: 32
         height: 32
@@ -350,7 +350,7 @@ TextureImporter:
       name: mountain-01_17
       rect:
         serializedVersion: 2
-        x: 128
+        x: 224
         y: 0
         width: 32
         height: 32
@@ -364,7 +364,7 @@ TextureImporter:
       name: mountain-01_18
       rect:
         serializedVersion: 2
-        x: 160
+        x: 256
         y: 0
         width: 32
         height: 32
