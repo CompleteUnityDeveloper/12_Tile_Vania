@@ -6,6 +6,7 @@ public class CoinPickup : MonoBehaviour
 {
 
     [SerializeField] AudioClip coinPickUpSFX;
+
     [SerializeField] int pointsForCoinPickup = 100;
 
     // Speech Bubble that shows when picking up object
@@ -28,8 +29,14 @@ public class CoinPickup : MonoBehaviour
         else
         {
             FindObjectOfType<GameSession>().AddToScore(pointsForCoinPickup);
-            // AudioSource.PlayClipAtPoint(coinPickUpSFX, Camera.main.transform.position);
+
         }
+
+        if (coinPickUpSFX)
+        {
+            AudioSource.PlayClipAtPoint(coinPickUpSFX, transform.position);
+        }
+
 
         Destroy(gameObject);
 

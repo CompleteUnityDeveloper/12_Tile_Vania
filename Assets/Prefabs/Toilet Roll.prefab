@@ -96,8 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1004f67959fb3744ac4dbb81bf2bb5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPickUpSFX: {fileID: 8300000, guid: 29932eb5d520e3f41a66c08e9fbd3540, type: 3}
+  coinPickUpSFX: {fileID: 8300000, guid: 54823b9692c35544e96c3c2c012470d3, type: 3}
   pointsForCoinPickup: 1
+  speechBubble: {fileID: 0}
 --- !u!212 &212750286870886296
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -130,7 +131,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 622844951
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 379558bf146c66c4587f80eacfe7145e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

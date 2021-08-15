@@ -6,7 +6,9 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour
 {
 
-    // Config 
+    // Config
+    [SerializeField] AudioClip hazardSound;
+    [SerializeField] AudioClip[] damageSound;
     [SerializeField] float runSpeed = 5f;
     float initialRunSpeed = 0f;
     [SerializeField] float jumpSpeed = 5f;
@@ -14,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] float climbSpeed = 5f;
     [SerializeField] Vector2 deathKick = new Vector2(25f, 25f);
 
-    [SerializeField] List<Sprite> damageSpeeches = new List<Sprite>();
+    // [SerializeField] List<Sprite> damageSpeeches = new List<Sprite>();
 
 
     // State
@@ -122,27 +124,39 @@ public class Player : MonoBehaviour
             FindObjectOfType<GameSession>().ProcessPlayerDeath();
 
             // Show a random damage Speech Bubble when taking damage
-            DamageSpeechBubble();
+            // DamageSpeechBubble();
+
+            // If there's an Audio Clip in the first array position play the damage sound
+            if (damageSound[0])
+            {
+                // Assign a random Audio Clip
+                int rand = Random.Range(0, damageSound.Length);
+
+                AudioSource.PlayClipAtPoint(damageSound[rand], transform.position);
+            }
         }
 
     }
 
-    private void DamageSpeechBubble()
-    {
-        // Choose a random Damage Speech Bubble
-        Sprite randomSpeech = damageSpeeches[Random.Range(0, damageSpeeches.Count)];
+    // private void DamageSpeechBubble()
+    // {
+    //     // Choose a random Damage Speech Bubble
+    //     Sprite randomSpeech = damageSpeeches[Random.Range(0, damageSpeeches.Count)];
 
-        // Call Speech Bubble method
-        FindObjectOfType<SpeechBubble>().ChangeBubble(randomSpeech);
-    }
+    //     // Call Speech Bubble method
+    //     FindObjectOfType<SpeechBubble>().ChangeBubble(randomSpeech);
+    // }
 
     private void Sick()
     {
         if (myBodyCollider.IsTouchingLayers(LayerMask.GetMask("5G")))
         {
             GetComponent<SpriteRenderer>().color = Color.green;
+
             runSpeed = (initialRunSpeed / 2);
             jumpSpeed = (initialJumpSpeed / 2);
+
+            AudioSource.PlayClipAtPoint(hazardSound, transform.position, 0.5f);
         }
         else
         {
