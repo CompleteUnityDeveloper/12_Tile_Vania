@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Levels/Map.unity
+    guid: 06a3a28d9f9a2e04cbe579e278fc0ef6
+  - enabled: 1
+    path: Assets/Levels/Victoria.unity
+    guid: 443ac617ae43b514d93aaa3c83f3d581
+  - enabled: 1
     path: Assets/Levels/Main Menu.unity
     guid: 94f3b8c323645f042acb0d42b9d6eee5
   - enabled: 1
-    path: Assets/Levels/Level 1.unity
-    guid: 443ac617ae43b514d93aaa3c83f3d581
-  - enabled: 1
     path: Assets/Levels/Level 2.unity
     guid: 3796a14d9ccbd6c4ba553e5c8d501e6b
-  - enabled: 1
-    path: Assets/Levels/Success.unity
-    guid: 06a3a28d9f9a2e04cbe579e278fc0ef6

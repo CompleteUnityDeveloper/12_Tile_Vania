@@ -156,7 +156,7 @@ public class Player : MonoBehaviour
             runSpeed = (initialRunSpeed / 2);
             jumpSpeed = (initialJumpSpeed / 2);
 
-            AudioSource.PlayClipAtPoint(hazardSound, transform.position, 0.5f);
+            AudioSource.PlayClipAtPoint(hazardSound, transform.position, 0.1f);
         }
         else
         {

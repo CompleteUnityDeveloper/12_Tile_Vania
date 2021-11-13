@@ -13,7 +13,7 @@ public class LevelExit : MonoBehaviour {
     private void LoadNextLevel()
     {
         var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(gameObject.name);
     }
 
 }

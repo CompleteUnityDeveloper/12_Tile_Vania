@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Map;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
@@ -7,6 +8,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Portals : MonoBehaviour
 {
 
+    private float loadTime = 2f;
     [SerializeField] AudioClip loadLevelSFX;
     private bool portal = false;
 
@@ -27,11 +29,11 @@ public class Portals : MonoBehaviour
 
     IEnumerator LoadLevel()
     {
-        FindObjectOfType<Overlay>().FadeOut(2f);
+        FindObjectOfType<Overlay>().FadeOut(loadTime);
 
         AudioSource.PlayClipAtPoint(loadLevelSFX, transform.position);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(loadTime);
         SceneManager.LoadScene(gameObject.name);
     }
 
