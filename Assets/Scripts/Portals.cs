@@ -12,6 +12,13 @@ public class Portals : MonoBehaviour
     [SerializeField] AudioClip loadLevelSFX;
     private bool portal = false;
 
+    private GameObject player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void Update()
     {
         PortalKey();
@@ -42,6 +49,9 @@ public class Portals : MonoBehaviour
         if (collision.tag == "Player")
         {
             portal = true;
+            
+            // Stops the player jump animation
+            player.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -49,6 +59,9 @@ public class Portals : MonoBehaviour
         if (collision.tag == "Player")
         {
             portal = false;
+
+            // Enables the player jump animation
+            player.GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 

@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class LevelExit : MonoBehaviour {
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        LoadNextLevel();
+        if (collision.tag == "Player")
+        {
+            LoadNextLevel();
+        }
     }
 
     private void LoadNextLevel()
